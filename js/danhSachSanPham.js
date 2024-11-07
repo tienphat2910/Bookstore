@@ -60,27 +60,32 @@ function displayProducts() {
     const productsContainer = document.getElementById('products-container');
     const filteredProducts = filterProducts();
     
-    // Cập nhật số lượng sản phẩm
     document.getElementById('total-products').textContent = 
         `Hiển thị ${filteredProducts.length} sản phẩm`;
 
-    // Xóa nội dung cũ
     productsContainer.innerHTML = '';
 
-    // Hiển thị sản phẩm
     filteredProducts.forEach(book => {
         const productHTML = `
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="${book.image}" class="card-img-top" alt="${book.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${book.title}</h5>
-                        <p class="card-text">${book.author}</p>
-                        <p class="card-text"><strong>${book.price}</strong></p>
-                        <button class="btn btn-primary add-to-cart" 
-                            data-product-id="${book.title}">
-                            Thêm vào giỏ hàng
-                        </button>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="${book.image}" alt="${book.title}">
+                        <div class="overlay">
+                            <button class="btn btn-primary add-to-cart" data-product-id="${book.title}">
+                                Thêm vào giỏ hàng
+                            </button>
+                            <button class="btn btn-outline-primary view-detail" data-product-id="${book.title}">
+                                Xem chi tiết
+                            </button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <div>
+                            <h5 class="book-title">${book.title}</h5>
+                            <p class="book-author">${book.author}</p>
+                        </div>
+                        <p class="book-price">${book.price}</p>
                     </div>
                 </div>
             </div>
@@ -88,17 +93,36 @@ function displayProducts() {
         productsContainer.innerHTML += productHTML;
     });
 
-    // Thêm sự kiện click cho các nút "Thêm vào giỏ hàng"
-    addCartButtonEvents();
+    addBookEventListeners();
 }
 
-// Hàm thêm sự kiện cho nút thêm vào giỏ hàng
-function addCartButtonEvents() {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    addToCartButtons.forEach(button => {
+// Thêm sự kiện cho các nút trong card sách
+function addBookEventListeners() {
+    // Sự kiện cho nút thêm vào giỏ hàng
+    document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function(e) {
-            const productId = e.target.getAttribute('data-product-id');
+            const productId = this.getAttribute('data-product-id');
             addToCart(productId);
+            e.stopPropagation();
+        });
+    });
+
+    // Sự kiện cho nút xem chi tiết
+    document.querySelectorAll('.view-detail').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const productId = this.getAttribute('data-product-id');
+            window.location.href = `ChiTietSanPham.html?id=${productId}`;
+            e.stopPropagation();
+        });
+    });
+
+    // Sự kiện hover cho card sách
+    document.querySelectorAll('.book-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.querySelector('.overlay').style.opacity = '1';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.querySelector('.overlay').style.opacity = '0';
         });
     });
 }
