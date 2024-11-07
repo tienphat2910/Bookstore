@@ -431,3 +431,144 @@ footer .col img {
     color: #ff3366 !important; /* Màu hồng đậm cho giá trong kết quả tìm kiếm */
     font-weight: bold;
 }
+
+/* Styles cho giỏ hàng */
+.cart-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 150px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.cart-item-author {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    color: #ff3366;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.quantity-btn {
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Style cho icon giỏ hàng */
+.shop a {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.shop a:hover {
+    transform: scale(1.1);
+}
+
+/* Style chung cho các icon trong header */
+.icons img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.product-detail-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.product-detail-buttons .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.product-detail-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style cho phần giảm giá */
+.cart-summary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.coupon-section {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+}
+
+.payment-details {
+    padding-top: 20px;
+}
+
+#couponMessage {
+    font-size: 14px;
+}
+
+/* Animation cho thông báo mã giảm giá */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.coupon-message {
+    animation: fadeIn 0.3s ease-in;
+}

@@ -1,0 +1,3 @@
+WELCOME10: Giảm 10%
+SAVE20: Giảm 20%
+SUPER30: Giảm 30%
