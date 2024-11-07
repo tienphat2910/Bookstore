@@ -593,3 +593,51 @@ footer .col img {
 .swal2-cancel {
     background-color: #6c757d !important;
 }
+
+/* Style cho wishlist */
+.heart-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+#wishlistCount {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff3366;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wishlist-container .card {
+    transition: transform 0.2s;
+}
+
+.wishlist-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.wishlist-container .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.wishlist-container .card-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.wishlist-container .card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}

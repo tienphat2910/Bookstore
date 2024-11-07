@@ -97,8 +97,11 @@
                         <p id="productDescription" class="product-detail-description"></p>
                     </div>
                     <div class="mt-4 product-detail-buttons">
-                        <button class="btn btn-primary">Thêm vào giỏ hàng</button>
-                        <button class="btn btn-outline-primary ms-2">Mua ngay</button>
+                        <button class="btn btn-primary" onclick="addToCart(product)">Thêm vào giỏ hàng</button>
+                        <button class="btn btn-outline-primary ms-2" onclick="handleBuyNow(product)">Mua ngay</button>
+                        <button class="btn btn-outline-danger ms-2" onclick="toggleWishlist(product)">
+                            <i class="fas fa-heart"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -211,6 +214,8 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/home_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../js/wishlist.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
