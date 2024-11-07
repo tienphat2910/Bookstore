@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chính sách bảo mật thanh toán</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+      .highlight {
+        color: rgb(248, 88, 13);
+      }
+      .content {
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .nav a span:hover {
+        color: rgb(71, 167, 154);
+      }
+      .content-item {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <!-- Hamburger Menu Icon -->
+          <div class="dropdown">
+            <button
+              class="btn btn-light me-3"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dropdown Content -->
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+              <h5 class="mb-3">Danh sách sản phẩm</h5>
+              <div class="d-flex">
+                <div class="me-4">
+                  <h6><a href="#" class="dropdown-item">Sách Trong nước</a></h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Văn học</a></li>
+                    <li><a href="#" class="dropdown-item">Kinh tế</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Tâm Lý - Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách thiếu nhi</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Sách Giáo Khoa - Tham Khảo</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách ngoại ngữ</a>
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">
+                    <a href="#" class="dropdown-item">FOREIGN BOOKS</a>
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Children</a></li>
+                    <li><a href="#" class="dropdown-item">Classic</a></li>
+                    <li><a href="#" class="dropdown-item">Best seller</a></li>
+                    <li><a href="#" class="dropdown-item">Fiction</a></li>
+                    <li><a href="#" class="dropdown-item">Dictionaries</a></li>
+                    <li><a href="#" class="dropdown-item">Comic</a></li>
+                    <li><a href="#" class="dropdown-item">Computing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Technology & Engineering</a
+                      >
+                    </li>
+                    <li><a href="#" class="dropdown-item">History</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h6>Văn học</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tiểu Thuyết</a></li>
+                    <li><a href="#" class="dropdown-item">Truyện Ngắn</a></li>
+                    <li><a href="#" class="dropdown-item">Light Novel</a></li>
+                  </ul>
+                  <h6 class="mt-3">Kinh tế</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a href="#" class="dropdown-item">Tài chính ngân hàng</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Marketing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Nhân vật - Bài học kinh doanh</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Quản trị - lãnh đạo</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Khởi nghiệp - làm giàu</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Chứng khoán - BĐS - Đầu tư</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Kế toán - Kiểm Toán - Thuế</a
+                      >
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">Tâm Lý - Kỹ năng sống</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tâm lý</a></li>
+                    <li><a href="#" class="dropdown-item">Kỹ năng sống</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+        <!-- Search and Icons Part -->
+        <div class="search-part">
+          <input
+            class="form-control me-2 search-input"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+        <div class="icons d-flex align-items-center">
+          <div class="profile me-3">
+            <img src="../img/user.png" alt="User" class="icon-outline-user" />
+          </div>
+          <div class="heart me-3">
+            <img src="../img/heart.png" alt="Wishlist" class="heart-icon" />
+          </div>
+          <div class="shop">
+            <img
+              src="../img/cart.png"
+              alt="Shopping Cart"
+              class="icon-outline-shopping-cart"
+            />
+          </div>
+        </div>
+      </header>
+      <nav>
+        <a
+          style="text-decoration: none; color: black"
+          class="home-Link"
+          href="index.html"
+          >Trang chủ</a
+        >
+        >
+        <a
+          style="text-decoration: none"
+          href="ChinhSachBaoMatThanhToan.html"
+          class="highlight"
+          >Chính sách bảo mật thanh toán</a
+        >
+      </nav>
+
+      <div class="content my-5">
+        <h1>CHÍNH SÁCH BẢO MẬT THANH TOÁN</h1>
+        <ol class="content-1" type="1">
+          <li class="content-item">Sự chấp thuận</li>
+          <p>
+            Hệ thống thanh toán thẻ được cung cấp bởi các đối tác thanh toán
+            <b>(“Đối tác cổng thanh toán”)</b> đã được cấp phép hoạt động hợp
+            pháp tại Việt Nam. Theo đó, các tiêu chuẩn bảo mật thanh toán thẻ
+            tại FAHASA đảm bảo tuân thủ theo các tiêu chuẩn bảo mật ngành.
+          </p>
+          <li class="content-item">Quy định bảo mật</li>
+          <p>
+            Chính sách giao dịch thanh toán bằng thẻ quốc tế và thẻ nội địa
+            (internet banking) đảm bảo tuân thủ các tiêu chuẩn của các Đối tác
+            cổng thanh toán gồm:
+          </p>
+          <ul>
+            <li>
+              Thông tin tài chính của khách hàng sẽ được bảo vệ trong suốt quá
+              trình giao dịch bằng giao thức SSL (Secure Sockets Layer) bằng
+              cách mã hóa tất cả các thông tin khách hàng nhập vào.
+            </li>
+            <li>
+              Chứng nhận tiêu chuẩn bảo mật dữ liệu thông tin thanh toán (PCI
+              DSS) do Trustwave cung cấp.
+            </li>
+            <li>Tiêu chuẩn mã hóa MD5 12 bit.</li>
+            <li>
+              Mật khẩu sử dụng một lần (OTP) được gửi qua SMS để đảm bảo việc
+              truy cập tài khoản được xác thực.
+            </li>
+            <li>
+              Các nguyên tắc và quy định bảo mật thông tin trong ngành tài chính
+              ngân hàng theo quy định của Ngân hàng Nhà nước Việt Nam.
+            </li>
+          </ul>
+          <p>
+            Chính sách bảo mật giao dịch trong thanh toán của FAHASA áp dụng với
+            khách hàng:
+          </p>
+          <ul>
+            <li>
+              FAHASA cung cấp tiện ích lưu giữ Token – chỉ lưu giữ chuỗi đã được
+              mã hóa bởi Đối Tác Cổng Thanh Toán cung cấp cho FAHASA.
+              <b>FAHASA không trực tiếp lưu giữ thông tin thẻ khách hàng.</b>
+              Việc bảo mật thông tin thẻ thanh toán khách hàng được thực hiện
+              bởi Đối Tác Cổng Thanh Toán đã được cấp phép.
+            </li>
+            <li>
+              Đối với thẻ quốc tế, thông tin thẻ thanh toán của khách hàng mà có
+              khả năng sử dụng để xác lập giao dịch không được lưu trên hệ thống
+              của FAHASA. Đối Tác Cổng Thanh Toán sẽ lưu trữ và bảo mật.
+            </li>
+            <li>
+              Đối với thẻ nội địa (internet banking), FAHASA chỉ lưu trữ mã đơn
+              hàng, mã giao dịch và tên Ngân hàng.
+            </li>
+            <li>
+              Trong trường hợp khách hàng có bất kỳ thông báo hoặc khiếu nại nào
+              về tình trạng thông tin thanh toán của khách hàng khi mua hàng qua
+              website/ ứng dụng của FAHASA bị thay đổi, xóa, hủy, sao chép, tiết
+              lộ, di chuyển trái phép hoặc bị chiếm đoạt gây thiệt hại cho khách
+              hàng thì FAHASA sẽ nỗ lực phối hợp với Đối Tác Cổng Thanh Toán để
+              tìm hiểu vấn đề và hỗ trợ xử lý cho đến khi hoàn tất vấn đề khách
+              hàng đang đang gặp phải.
+            </li>
+          </ul>
+          <p>
+            FAHASA cam kết đảm bảo thực hiện nghiêm túc các biện pháp bảo mật
+            cần thiết cho mọi hoạt động thanh toán thực hiện qua website/ ứng
+            dụng của FAHASA.
+          </p>
+          <p>
+            <b
+              >Các quy định tại Chính Sách Bảo Mật Dữ Liệu Cá Nhân cũng sẽ được
+              áp dụng đồng thời để đảm bảo an toàn các thông tin thanh toán của
+              khách hàng </b
+            >(vui lòng xem chi tiết
+            <a href="ChinhSachBaoMatThongTinCaNhan.html">tại đây</a>).
+          </p>
+          <li class="content-item">Hiệu Lực</li>
+          <p>
+            Chính Sách Bảo Mật Thanh Toán này được cập nhật và có hiệu lực từ
+            ngày 01/06/2024.
+          </p>
+          <p>
+            FAHASA có thể điều chỉnh Chính Sách này vào bất kỳ thời điểm nào, và
+            đăng tải công khai Chính Sách đã được điều chỉnh trên website
+            fahasa.com. Việc khách hàng tiếp tục sử dụng dịch vụ của FAHASA mà
+            không có bất kỳ khiếu nại nào đối với Chính Sách được điều chỉnh sẽ
+            được hiểu rằng khách hàng đã chấp thuận Chính Sách được điều chỉnh
+            đó của FAHASA.
+          </p>
+        </ol>
+        <h2>ĐẠI DIỆN CÔNG TY CỔ PHẦN PHÁT HÀNH SÁCH BOOKSTORE</h2>
+        <p>
+          Xin cảm ơn quý khách hàng đã tin tưởng và sử dụng dịch vụ của
+          Bookstore!
+        </p>
+      </div>
+      <footer class="container py-5">
+        <div class="row">
+          <!-- Left Side -->
+          <div class="col-md-4">
+            <img src="../img/logo.jpg" alt="Logo" class="mb-3" width="150" />
+            <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+            <p>
+              Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ
+              trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả
+              Hệ Thống Bookstore trên toàn quốc.
+            </p>
+            <div class="d-flex align-items-center">
+              <img
+                src="../img/logo-bo-cong-thuong-da-thong-bao1.webp"
+                alt="Registered Logo"
+                width="100"
+              />
+            </div>
+            <div class="mt-3 d-flex">
+              <!-- Social Media Icons -->
+              <img
+                src="../img/Facebook-on.webp"
+                alt="Facebook"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Insta-on.webp"
+                alt="Instagram"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Youtube-on.webp"
+                alt="YouTube"
+                class="me-2"
+                width="30"
+              />
+            </div>
+
+            <div class="mt-3 d-flex app-download-icons">
+              <!-- App Download Icons -->
+              <img src="../img/android1.webp" alt="Android" class="me-2" />
+              <img src="../img/appstore1.webp" alt="App Store" />
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- Column 1: DỊCH VỤ -->
+              <div class="col-md-3">
+                <h5>DỊCH VỤ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="DieuKhoanSuDung.html">Điều khoản sử dụng</a></li>
+                  <li>
+                    <a href="ChinhSachBaoMatThongTinCaNhan.html"
+                      >Chính sách bảo mật thông tin cá nhân</a
+                    >
+                  </li>
+                  <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                  <li><a href="#">Giới thiệu Bookstore</a></li>
+                </ul>
+              </div>
+              <!-- Column 2: HỖ TRỢ -->
+              <div class="col-md-3">
+                <h5>HỖ TRỢ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Chính sách đổi - trả - hoàn tiền</a></li>
+                  <li><a href="#">Chính sách bảo hành - bồi hoàn</a></li>
+                  <li><a href="#">Chính sách vận chuyển</a></li>
+                  <li><a href="#">Chính sách khách sỉ</a></li>
+                </ul>
+              </div>
+              <!-- Column 3: TÀI KHOẢN CỦA TÔI -->
+              <div class="col-md-3">
+                <h5>TÀI KHOẢN CỦA TÔI</h5>
+                <ul class="list-unstyled">
+                  <li><a href="login.html">Đăng nhập/Tạo mới tài khoản</a></li>
+                  <li><a href="#">Thay đổi địa chỉ khách hàng</a></li>
+                  <li><a href="#">Chi tiết tài khoản</a></li>
+                  <li><a href="#">Lịch sử mua hàng</a></li>
+                </ul>
+              </div>
+              <!-- Column 4: LIÊN HỆ -->
+              <div class="col-md-3">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fa fa-map-marker me-2"></i>12 Nguyễn Văn Bảo,
+                    Phường 4, Gò Vấp, Hồ Chí Minh
+                  </li>
+                  <li><i class="fa fa-envelope me-2"></i>cskh@gmail.com</li>
+                  <li><i class="fa fa-phone me-2"></i>0376549230</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Payment and Delivery Icons -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <img
+                  src="../img/icon_snappy1.webp"
+                  alt="Snappy"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/logo_lex.webp"
+                  alt="LEX"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/Logo_ninjavan.webp"
+                  alt="Ninja Van"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpost1.webp"
+                  alt="VNPost"
+                  class="me-2"
+                  width="50"
+                />
+                <img src="../img/ahamove_logo3.webp" alt="Ahamove" width="50" />
+              </div>
+              <div class="col text-center">
+                <img
+                  src="../img/momopay.webp"
+                  alt="Momo"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpay_logo.webp"
+                  alt="VNPay"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/shopeepay_logo.webp"
+                  alt="ShopeePay"
+                  width="50"
+                />
+              </div>
+            </div>
+
+            <!-- Business Registration Information -->
+            <p class="mt-4 text-center">
+              Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và
+              Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi
+              lần thứ 10, ngày 20/05/2022.
+            </p>
+            <p class="text-center">
+              &copy; 2024 Your Company. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/home_script.js"></script>
+  </body>
+</html>

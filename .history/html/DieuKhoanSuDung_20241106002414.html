@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Điều Khoản Sử Dụng</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+      .highlight {
+        color: rgb(248, 88, 13); /* Màu tô cho liên kết */
+      }
+      .content {
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <!-- Hamburger Menu Icon -->
+          <div class="dropdown">
+            <button
+              class="btn btn-light me-3"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dropdown Content -->
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+              <h5 class="mb-3">Danh sách sản phẩm</h5>
+              <div class="d-flex">
+                <div class="me-4">
+                  <h6><a href="#" class="dropdown-item">Sách Trong nước</a></h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Văn học</a></li>
+                    <li><a href="#" class="dropdown-item">Kinh tế</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Tâm Lý - Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách thiếu nhi</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Sách Giáo Khoa - Tham Khảo</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách ngoại ngữ</a>
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">
+                    <a href="#" class="dropdown-item">FOREIGN BOOKS</a>
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Children</a></li>
+                    <li><a href="#" class="dropdown-item">Classic</a></li>
+                    <li><a href="#" class="dropdown-item">Best seller</a></li>
+                    <li><a href="#" class="dropdown-item">Fiction</a></li>
+                    <li><a href="#" class="dropdown-item">Dictionaries</a></li>
+                    <li><a href="#" class="dropdown-item">Comic</a></li>
+                    <li><a href="#" class="dropdown-item">Computing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Technology & Engineering</a
+                      >
+                    </li>
+                    <li><a href="#" class="dropdown-item">History</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h6>Văn học</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tiểu Thuyết</a></li>
+                    <li><a href="#" class="dropdown-item">Truyện Ngắn</a></li>
+                    <li><a href="#" class="dropdown-item">Light Novel</a></li>
+                  </ul>
+                  <h6 class="mt-3">Kinh tế</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a href="#" class="dropdown-item">Tài chính ngân hàng</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Marketing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Nhân vật - Bài học kinh doanh</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Quản trị - lãnh đạo</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Khởi nghiệp - làm giàu</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Chứng khoán - BĐS - Đầu tư</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Kế toán - Kiểm Toán - Thuế</a
+                      >
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">Tâm Lý - Kỹ năng sống</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tâm lý</a></li>
+                    <li><a href="#" class="dropdown-item">Kỹ năng sống</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+        <!-- Search and Icons Part -->
+        <div class="search-part">
+          <input
+            class="form-control me-2 search-input"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+        <div class="icons d-flex align-items-center">
+          <div class="profile me-3">
+            <img src="../img/user.png" alt="User" class="icon-outline-user" />
+          </div>
+          <div class="heart me-3">
+            <img src="../img/heart.png" alt="Wishlist" class="heart-icon" />
+          </div>
+          <div class="shop">
+            <img
+              src="../img/cart.png"
+              alt="Shopping Cart"
+              class="icon-outline-shopping-cart"
+            />
+          </div>
+        </div>
+      </header>
+      <nav>
+        <a
+          style="text-decoration: none; color: black"
+          class="home"
+          href="index.html"
+          >Trang chủ</a
+        >
+        >
+        <span class="highlight">Điều khoản sử dụng</span>
+      </nav>
+
+      <div class="content">
+        <h1>ĐIỀU KHOẢN SỬ DỤNG</h1>
+        <p>
+          Chào mừng quý khách đến mua sắm tại FAHASA. Sau khi truy cập vào
+          website FAHASA để tham khảo hoặc mua sắm, quý khách đã đồng ý tuân thủ
+          và ràng buộc với những quy định của FAHASA. Vui lòng xem kỹ các quy
+          định và hợp tác với chúng tôi để xây dựng 1 website FAHASA ngày càng
+          thân thiện và phục vụ tốt những yêu cầu của chính quý khách. Ngoài ra,
+          nếu có bất cứ câu hỏi nào về những thỏa thuận dưới đây, vui lòng liên
+          hệ với FAHASA theo số điện thoại hotline 1900636467 hoặc email cho
+          chúng tôi qua địa chỉ cskh@fahasa.com.vn
+        </p>
+
+        <h2>Tài khoản của khách hàng</h2>
+        <p>
+          Một số dịch vụ, tính năng tại đây yêu cầu quý khách cần phải đăng ký
+          Tài khoản FAHASA thì mới có thể sử dụng. Do đó, để tận hưởng đầy đủ
+          các dịch vụ và tính năng này, quý khách vui lòng cho phép FAHASA tiến
+          hành xử lý các dữ liệu cá nhân cơ bản sau:
+        </p>
+        <ul>
+          <li>
+            Dữ liệu cá nhân cơ bản bắt buộc phải cung cấp, là các thông tin giúp
+            xác định danh tính đối với từng tài khoản FAHASA, bao gồm họ tên,
+            địa chỉ email, số điện thoại,... của quý khách.
+          </li>
+          <li>
+            Trường hợp quý khách đăng ký tài khoản FAHASA thông qua tài khoản
+            Facebook hoặc Google, các dữ liệu cá nhân cơ bản của quý khách cung
+            cấp cho các nền tảng này như họ tên, địa chỉ email, số điện thoại,
+            ảnh đại diện,... sẽ được gửi đến FAHASA ngay khi quý khách cho phép
+            FAHASA truy cập vào thông tin của quý khách trên các nền tảng này
+            theo từng chính sách của nền tảng.
+          </li>
+          <li>
+            Dữ liệu cá nhân cơ bản được cung cấp để phục vụ giao dịch, là các
+            thông tin cần thiết để thực hiện một giao dịch tại website
+            fahasa.com, bao gồm địa chỉ giao hàng, địa chỉ thanh toán, phương
+            thức thanh toán,... của quý khách.
+          </li>
+          <li>
+            Dữ liệu cá nhân cơ bản tự nguyện cung cấp, là các thông tin mà quý
+            khách có thể chia sẻ (hoặc không) để cá nhân hóa trải nghiệm sử dụng
+            dịch vụ tại FAHASA, bao gồm ngày tháng năm sinh, giới tính, sở
+            thích, nghề nghiệp,... của quý khách.
+          </li>
+        </ul>
+        <p>
+          Việc sử dụng và bảo mật thông tin Tài khoản FAHASA là trách nhiệm và
+          quyền lợi của quý khách khi sử dụng dịch vụ tại FAHASA. Quý khách phải
+          giữ kín mật khẩu và tài khoản, hoàn toàn chịu trách nhiệm đối với tất
+          cả các hoạt động diễn ra thông qua việc sử dụng mật khẩu hoặc tài
+          khoản của mình. Quý khách nên đảm bảo thoát khỏi Tài khoản FAHASA sau
+          mỗi lần sử dụng để bảo mật dữ liệu cá nhân của mình.
+        </p>
+        <p>
+          Trong trường hợp thông tin do quý khách cung cấp không đầy đủ hoặc có
+          sai sót dẫn đến việc không thể giao hàng cho quý khách, chúng tôi có
+          quyền đình chỉ hoặc từ chối phục vụ, giao hàng mà không phải chịu bất
+          cứ trách nhiệm nào đối với quý khách. Khi có những thay đổi thông tin
+          của quý khách, vui lòng cập nhật lại thông tin trong Tài khoản FAHASA.
+        </p>
+
+        <h2>Quyền lợi bảo mật dữ liệu cá nhân của khách hàng</h2>
+        <p>
+          Khi sử dụng dịch vụ tại website FAHASA, quý khách được đảm bảo rằng
+          những thông tin cung cấp cho chúng tôi sẽ chỉ được dùng để nâng cao
+          chất lượng dịch vụ dành cho khách hàng của FAHASA và sẽ không được
+          chuyển giao cho một bên thứ ba nào khác vì mục đích thương mại. Trường
+          hợp quý khách có yêu cầu: rút lại sự đồng ý, xóa, chỉnh sửa, phản đối,
+          yêu cầu cung cấp, yêu cầu hạn chế xử lý đối với các dữ liệu cá nhân
+          của mình, quý khách vui lòng thao tác trên hệ thống website hoặc liên
+          hệ với FAHASA theo số điện thoại hotline 1900636467 hoặc email cho
+          chúng tôi qua địa chỉ cskh@fahasa.com.vn.
+        </p>
+        <p>
+          Dữ liệu cá nhân của quý khách tại FAHASA sẽ được chúng tôi bảo mật và
+          chỉ trong trường hợp pháp luật yêu cầu, chúng tôi sẽ buộc phải cung
+          cấp những thông tin này cho các cơ quan có thẩm quyền.
+        </p>
+
+        <h2>Trách nhiệm của khách hàng khi sử dụng dịch vụ của FAHASA</h2>
+        <p>
+          Quý khách tuyệt đối không được sử dụng bất kỳ công cụ, phương pháp nào
+          để can thiệp, xâm nhập bất hợp pháp vào hệ thống hay làm thay đổi cấu
+          trúc dữ liệu tại website FAHASA. Quý khách không được có những hành
+          động (như thực hiện, cổ vũ,...) việc can thiệp, xâm nhập dữ liệu của
+          FAHASA cũng như hệ thống máy chủ của chúng tôi.
+        </p>
+        <p>
+          Quý khách không được đưa ra những nhận xét, đánh giá có ý xúc phạm,
+          quấy rối, làm phiền hoặc có bất cứ hành vi nào thiếu văn hóa đối với
+          người khác. Không nêu ra những nhận xét có tính chính trị (tuyên
+          truyền, chống phá, xuyên tạc chính quyền), kỳ thị tôn giáo, giới tính,
+          sắc tộc.... Tuyệt đối cấm mọi hành vi mạo nhận, cố ý tạo sự nhầm lẫn
+          mình là một khách hàng khác hoặc là thành viên Ban Quản Trị FAHASA.
+        </p>
+
+        <h2>Trách nhiệm và quyền lợi của FAHASA</h2>
+        <p>
+          Trách nhiệm của FAHASA: Chúng tôi chịu trách nhiệm tuân thủ các nguyên
+          tắc về xử lý dữ liệu cá nhân theo đúng quy định pháp luật và các điều
+          khoản được nêu ra tại Chính sách bảo mật dữ liệu cá nhân của khách
+          hàng (vui lòng xem chi tiết tại đây). Trong trường hợp có những phát
+          sinh ngoài ý muốn hoặc trách nhiệm của mình, FAHASA sẽ không chịu
+          trách nhiệm về mọi tổn thất phát sinh.
+        </p>
+        <p>
+          Quyền lợi của FAHASA: Chúng tôi không cho phép bất kỳ tổ chức, cá nhân
+          nào quảng bá sản phẩm tại website FAHASA mà chưa có sự đồng ý bằng văn
+          bản từ FAHASA. Các thỏa thuận và quy định trong Điều khoản sử dụng này
+          có thể thay đổi vào bất cứ lúc nào nhưng sẽ được FAHASA thông báo cụ
+          thể trên website FAHASA.
+        </p>
+
+        <p>
+          Ngoài ra, xin vui lòng thông báo cho quản trị web của FAHASA ngay khi
+          quý khách phát hiện ra lỗi hệ thống theo số điện thoại hotline
+          1900636467 hoặc email cho chúng tôi qua địa chỉ cskh@fahasa.com.vn.
+        </p>
+
+        <h2>Hiệu Lực</h2>
+        <p>
+          Điều Khoản Sử Dụng Dịch Vụ này được cập nhật và có hiệu lực từ ngày
+          01/06/2024.
+        </p>
+        <p>
+          FAHASA có thể điều chỉnh Điều Khoản Sử Dụng Dịch Vụ này vào bất kỳ
+          thời điểm nào, và đăng tải công khai Điều Khoản Sử Dụng đã được điều
+          chỉnh trên website fahasa.com. Việc khách hàng tiếp tục sử dụng dịch
+          vụ của FAHASA mà không có bất kỳ khiếu nại nào đối với Chính Sách được
+          điều chỉnh sẽ được hiểu rằng khách hàng đã chấp thuận Điều Khoản Sử
+          Dụng Dịch Vụ được điều chỉnh đó của FAHASA.
+        </p>
+
+        <h2>ĐẠI DIỆN CÔNG TY CỔ PHẦN PHÁT HÀNH SÁCH FAHASA</h2>
+        <p>
+          Xin cảm ơn quý khách hàng đã tin tưởng và sử dụng dịch vụ của FAHASA!
+        </p>
+      </div>
+      <footer class="container py-5">
+        <div class="row">
+          <!-- Left Side -->
+          <div class="col-md-4">
+            <img src="../img/logo.jpg" alt="Logo" class="mb-3" width="150" />
+            <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+            <p>
+              Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ
+              trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả
+              Hệ Thống Bookstore trên toàn quốc.
+            </p>
+            <div class="d-flex align-items-center">
+              <img
+                src="../img/logo-bo-cong-thuong-da-thong-bao1.webp"
+                alt="Registered Logo"
+                width="100"
+              />
+            </div>
+            <div class="mt-3 d-flex">
+              <!-- Social Media Icons -->
+              <img
+                src="../img/Facebook-on.webp"
+                alt="Facebook"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Insta-on.webp"
+                alt="Instagram"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Youtube-on.webp"
+                alt="YouTube"
+                class="me-2"
+                width="30"
+              />
+            </div>
+
+            <div class="mt-3 d-flex app-download-icons">
+              <!-- App Download Icons -->
+              <img src="../img/android1.webp" alt="Android" class="me-2" />
+              <img src="../img/appstore1.webp" alt="App Store" />
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- Column 1: DỊCH VỤ -->
+              <div class="col-md-3">
+                <h5>DỊCH VỤ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Điều khoản sử dụng</a></li>
+                  <li><a href="#">Chính sách bảo mật thông tin cá nhân</a></li>
+                  <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                  <li><a href="#">Giới thiệu Bookstore</a></li>
+                </ul>
+              </div>
+              <!-- Column 2: HỖ TRỢ -->
+              <div class="col-md-3">
+                <h5>HỖ TRỢ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Chính sách đổi - trả - hoàn tiền</a></li>
+                  <li><a href="#">Chính sách bảo hành - bồi hoàn</a></li>
+                  <li><a href="#">Chính sách vận chuyển</a></li>
+                  <li><a href="#">Chính sách khách sỉ</a></li>
+                </ul>
+              </div>
+              <!-- Column 3: TÀI KHOẢN CỦA TÔI -->
+              <div class="col-md-3">
+                <h5>TÀI KHOẢN CỦA TÔI</h5>
+                <ul class="list-unstyled">
+                  <li><a href="login.html">Đăng nhập/Tạo mới tài khoản</a></li>
+                  <li><a href="#">Thay đổi địa chỉ khách hàng</a></li>
+                  <li><a href="#">Chi tiết tài khoản</a></li>
+                  <li><a href="#">Lịch sử mua hàng</a></li>
+                </ul>
+              </div>
+              <!-- Column 4: LIÊN HỆ -->
+              <div class="col-md-3">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fa fa-map-marker me-2"></i>12 Nguyễn Văn Bảo,
+                    Phường 4, Gò Vấp, Hồ Chí Minh
+                  </li>
+                  <li><i class="fa fa-envelope me-2"></i>cskh@gmail.com</li>
+                  <li><i class="fa fa-phone me-2"></i>0376549230</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Payment and Delivery Icons -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <img
+                  src="../img/icon_snappy1.webp"
+                  alt="Snappy"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/logo_lex.webp"
+                  alt="LEX"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/Logo_ninjavan.webp"
+                  alt="Ninja Van"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpost1.webp"
+                  alt="VNPost"
+                  class="me-2"
+                  width="50"
+                />
+                <img src="../img/ahamove_logo3.webp" alt="Ahamove" width="50" />
+              </div>
+              <div class="col text-center">
+                <img
+                  src="../img/momopay.webp"
+                  alt="Momo"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpay_logo.webp"
+                  alt="VNPay"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/shopeepay_logo.webp"
+                  alt="ShopeePay"
+                  width="50"
+                />
+              </div>
+            </div>
+
+            <!-- Business Registration Information -->
+            <p class="mt-4 text-center">
+              Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và
+              Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi
+              lần thứ 10, ngày 20/05/2022.
+            </p>
+            <p class="text-center">
+              &copy; 2024 Your Company. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>

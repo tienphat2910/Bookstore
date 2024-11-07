@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chính sách bảo mật thông tin cá nhân</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+      .highlight-1 {
+        color: rgb(248, 88, 13);
+      }
+      .content {
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .nav a span:hover {
+        color: rgb(71, 167, 154);
+      }
+      .highlight {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <!-- Hamburger Menu Icon -->
+          <div class="dropdown">
+            <button
+              class="btn btn-light me-3"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dropdown Content -->
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+              <h5 class="mb-3">Danh sách sản phẩm</h5>
+              <div class="d-flex">
+                <div class="me-4">
+                  <h6><a href="#" class="dropdown-item">Sách Trong nước</a></h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Văn học</a></li>
+                    <li><a href="#" class="dropdown-item">Kinh tế</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Tâm Lý - Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách thiếu nhi</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Sách Giáo Khoa - Tham Khảo</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách ngoại ngữ</a>
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">
+                    <a href="#" class="dropdown-item">FOREIGN BOOKS</a>
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Children</a></li>
+                    <li><a href="#" class="dropdown-item">Classic</a></li>
+                    <li><a href="#" class="dropdown-item">Best seller</a></li>
+                    <li><a href="#" class="dropdown-item">Fiction</a></li>
+                    <li><a href="#" class="dropdown-item">Dictionaries</a></li>
+                    <li><a href="#" class="dropdown-item">Comic</a></li>
+                    <li><a href="#" class="dropdown-item">Computing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Technology & Engineering</a
+                      >
+                    </li>
+                    <li><a href="#" class="dropdown-item">History</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h6>Văn học</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tiểu Thuyết</a></li>
+                    <li><a href="#" class="dropdown-item">Truyện Ngắn</a></li>
+                    <li><a href="#" class="dropdown-item">Light Novel</a></li>
+                  </ul>
+                  <h6 class="mt-3">Kinh tế</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a href="#" class="dropdown-item">Tài chính ngân hàng</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Marketing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Nhân vật - Bài học kinh doanh</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Quản trị - lãnh đạo</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Khởi nghiệp - làm giàu</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Chứng khoán - BĐS - Đầu tư</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Kế toán - Kiểm Toán - Thuế</a
+                      >
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">Tâm Lý - Kỹ năng sống</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tâm lý</a></li>
+                    <li><a href="#" class="dropdown-item">Kỹ năng sống</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+        <!-- Search and Icons Part -->
+        <div class="search-part">
+          <input
+            class="form-control me-2 search-input"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+        <div class="icons d-flex align-items-center">
+          <div class="profile me-3">
+            <img src="../img/user.png" alt="User" class="icon-outline-user" />
+          </div>
+          <div class="heart me-3">
+            <img src="../img/heart.png" alt="Wishlist" class="heart-icon" />
+          </div>
+          <div class="shop">
+            <img
+              src="../img/cart.png"
+              alt="Shopping Cart"
+              class="icon-outline-shopping-cart"
+            />
+          </div>
+        </div>
+      </header>
+      <nav>
+        <a
+          style="text-decoration: none; color: black"
+          class="home-Link"
+          href="index.html"
+          >Trang chủ</a
+        >
+        >
+        <a
+          style="text-decoration: none"
+          href="ChinhSachBaoMatThongTinCaNhan.html"
+          class="highlight-1"
+          >Chính Sách Bảo Vệ Thông Tin Cá Nhân</a
+        >
+      </nav>
+
+      <div class="content my-5">
+        <h1>Chính Sách Bảo Vệ Thông Tin Cá Nhân</h1>
+        <h1>DỮ LIỆU CÁ NHÂN CỦA KHÁCH HÀNG</h1>
+        <br />
+        <p>
+          Bookstore mong muốn đem lại một tiện ích mua hàng trực tuyến tin cậy,
+          tiết kiệm và thấu hiểu người dùng. Chúng tôi nhận thấy khách hàng sử
+          dụng website Bookstore.com để mua sắm nhưng không phải ai cũng mong
+          muốn chia sẻ dữ liệu cá nhân của mình. Chúng tôi, Công ty Bookstore,
+          tôn trọng quyền riêng tư của khách hàng và cam kết bảo mật dữ liệu cá
+          nhân của khách hàng khi khách hàng tin vào chúng tôi và cung cấp dữ
+          liệu cá nhân của mình cho chúng tôi để mua sắm tại website
+          Bookstore.com. Đây là nguyên tắc khi tiếp cận quyền riêng tư đối với
+          dữ liệu cá nhân của khách hàng tại website Bookstore.com.
+        </p>
+        <p>Chính Sách Bảo Mật Dữ Liệu Cá Nhân này bao gồm các nội dung:</p>
+        <ol type="1" style="display: flex; flex-direction: column; gap: 10px">
+          <li>Sự Chấp Thuận</li>
+          <li>Phạm Vi Thu Thập</li>
+          <li>Mục Đích Xử Lý Dữ Liệu</li>
+          <li>Cách Thức Xử Lý Dữ Liệu</li>
+          <li>Thời Gian Lưu Trữ</li>
+          <li>Không Chia Sẻ Dữ Liệu Cá Nhân Khách Hàng</li>
+          <li>An Toàn Dữ Liệu</li>
+          <li>Hậu Quả, Thiệt Hại Không Mong Muốn Có Khả Năng Xảy Ra</li>
+          <li>Quyền, Nghĩa Vụ Của Khách Hàng Đối Với Dữ Liệu Cá Nhân</li>
+          <li>Thông Tin Liên Hệ</li>
+          <li>Các Tổ Chức, Cá Nhân Liên Quan Đến Việc Xử Lý Dữ Liệu</li>
+          <li>Hiệu Lực</li>
+        </ol>
+        <br /><br />
+        <div class="policy">
+          <ol type="1" style="display: flex; flex-direction: column; gap: 10px">
+            <li class="highlight">Sự Chấp Thuận</li>
+            <p>
+              Một thông báo sẽ được gửi cho quý khách trước khi Bookstore tiến
+              hành bất kỳ hoạt động xử lý dữ liệu cá nhân nào. Do đó, việc quý
+              khách xác nhận đồng ý cho phép Bookstore xử lý dữ liệu cá nhân của
+              mình đồng nghĩa với việc quý khách đã đọc, hiểu rõ và tự nguyện
+              đồng ý đối với các nội dung được nêu ra trong Chính Sách Bảo Mật
+              Dữ Liệu Cá Nhân này. Bookstore cam kết rằng việc xử lý dữ liệu là
+              đúng với mục đích, phù hợp và giới hạn trong phạm vi của Chính
+              Sách Bảo Mật Dữ Liệu Cá Nhân. Trường hợp quý khách không đồng ý
+              với toàn bộ hoặc một phần của Chính Sách này, quý khách có thể sử
+              dụng các quyền như được nêu tại Mục 7 dưới đây. Chúng tôi bảo lưu
+              quyền sửa đổi, bổ sung nhằm hoàn thiện đối với Chính Sách này vào
+              bất kỳ thời điểm nào. Chúng tôi khuyến khích quý khách thường
+              xuyên xem lại Chính Sách Bảo Mật Dữ Liệu Cá Nhân này để có được
+              những cập nhật mới nhất đảm bảo quý khách biết và thực hiện quyền
+              quản lý thông tin cá nhân của mình.
+            </p>
+            <li class="highlight">Phạm Vi Thu Thập</li>
+            <p>
+              Bookstore chỉ thu thập dữ liệu cá nhân cơ bản của khách hàng, tức
+              những thông tin giúp xác định một con người cụ thể, bao gồm: họ
+              tên, địa chỉ email, số điện thoại, địa chỉ giao hàng, địa chỉ
+              thanh toán, giới tính, ngày tháng năm sinh, sở thích, thông tin
+              đăng nhập Tài khoản Bookstore (trừ mật khẩu đăng nhập),... và một
+              số thông tin khác khi khách hàng tương tác trên website
+              Bookstore.com. Cũng cần phải lưu ý rằng, Bookstore không tiến hành
+              thu thập bất kỳ dữ liệu cá nhân nào thuộc nhóm dữ liệu cá nhân
+              nhạy cảm, gắn liền với quyền riêng tư của khách hàng.
+            </p>
+            <li class="highlight">Mục Đích Xử Lý Dữ Liệu</li>
+            <p>
+              Xử Lý Dữ Liệu Cá Nhân là một hoặc nhiều hoạt động tác động tới dữ
+              liệu cá nhân, như: thu thập, ghi, phân tích, xác nhận, lưu trữ,
+              chỉnh sửa, công khai, kết hợp, truy cập, truy xuất, thu hồi, mã
+              hóa, giải mã, sao chép, chia sẻ, truyền đưa, cung cấp, chuyển
+              giao, xóa, hủy dữ liệu cá nhân hoặc các hành động khác có liên
+              quan.
+            </p>
+            <p>
+              Theo đó, chúng tôi xử lý dữ liệu cá nhân của khách hàng chỉ cần
+              thiết nhằm phục vụ cho các mục đích sau:
+            </p>
+            <ul class="mucDich">
+              <li class="group-item">
+                <b>Đơn Hàng:</b> để xử lý các vấn đề liên quan đến đơn đặt hàng
+                của quý khách;
+              </li>
+              <li class="group-item">
+                <b>Duy Trì Tài Khoản:</b> để tạo, xác thực và duy trì tài khoản
+                của quý khách với chúng tôi, bao gồm cả các chương trình khách
+                hàng thân thiết hoặc các chương trình thưởng đi kèm với tài
+                khoản của khách hàng;
+              </li>
+              <li class="group-item">
+                <b>Dịch Vụ Người Tiêu Dùng, Dịch Vụ Chăm Sóc Khách Hàng:</b> bao
+                gồm các phản hồi cho các yêu cầu, khiếu nại và bình luận, đánh
+                giá của khách hàng;
+              </li>
+              <li class="group-item">
+                <b>Cá Nhân Hóa:</b> chúng tôi có thể tổ hợp dữ liệu cá nhân được
+                thu thập để có một cái nhìn hoàn chỉnh hơn về một người tiêu
+                dùng và từ đó cho phép chúng tôi phục vụ tốt hơn với sự cá nhân
+                hóa mạnh hơn ở các khía cạnh, bao gồm nhưng không giới hạn: (i)
+                để cải thiện và cá nhân hóa trải nghiệm của khách hàng trên
+                website Bookstore.com; (ii) để cải thiện các tiện ích, dịch vụ,
+                điều chỉnh chúng phù hợp với các nhu cầu được cá thể hóa và đi
+                đến những ý tưởng dịch vụ mới; (iii) để phục vụ khách hàng với
+                những giới thiệu, quảng cáo được điều chỉnh phù hợp với sự quan
+                tâm của quý khách.
+              </li>
+              <li class="group-item">
+                <b>An Ninh:</b> cho các mục đích ngăn ngừa các hoạt động phá hủy
+                Tài khoản FAHASA của khách hàng hoặc các hoạt động giả mạo khách
+                hàng.
+              </li>
+              <li class="group-item">
+                <b
+                  >Các hoạt động Tăng Cường Hiệu Quả Kinh Doanh, Phân Tích,
+                  Nghiên Cứu Thị Trường, Quảng Cáo và Tiếp thị</b
+                >
+                như được nêu tại Mục 5 của Chính Sách Bảo Mật Dữ Liệu Cá Nhân
+                này.
+              </li>
+              <li class="group-item">
+                <b>Theo yêu cầu của pháp luật:</b> tùy quy định của pháp luật
+                vào từng thời điểm, chúng tôi có thể tiến hành xử lý dữ liệu cá
+                nhân của khách hàng theo yêu cầu của cơ quan nhà nước có thẩm
+                quyền.
+              </li>
+            </ul>
+            <li class="highlight">Cách Thức Xử Lý Dữ Liệu</li>
+            <p>
+              <b>Cách thức thu thập dữ liệu cá nhân:</b> Thu thập trực tiếp khi
+              khách hàng cung cấp thông tin cá nhân cho chúng tôi, đồng thời thu
+              thập gián tiếp thông qua cookies và các công nghệ theo dấu khi
+              khách hàng tương tác trên website fahasa.com và từ những nguồn hợp
+              pháp khác.
+            </p>
+            <p>
+              <b>Cách thức ghi, phân tích, xác nhận dữ liệu cá nhân:</b> Khách
+              hàng truy cập vào website Fahasa.com và tiến hành đăng ký Tài
+              khoản FAHASA đồng thời với cung cấp các dữ liệu cá nhân của mình.
+              Sau khi dữ liệu được ghi, hệ thống của FAHASA sẽ tự động phân tích
+              và gửi một email/ tin nhắn SMS xác nhận đến địa chỉ email/ số điện
+              thoại mà khách hàng đã cung cấp hoặc yêu cầu khách hàng trả lời
+              một số câu hỏi an ninh.
+            </p>
+            <p>
+              <b
+                >Cách thức lưu trữ, truy cập, chỉnh sửa, xóa, hủy dữ liệu cá
+                nhân:</b
+              >
+              Dữ liệu cá nhân của khách hàng (bao gồm cả nhật ký hệ thống quá
+              trình xử lý dữ liệu cá nhân) được lưu trữ trong cơ sở dữ liệu của
+              FAHASA, có sử dụng các biện pháp tổ chức và kỹ thuật, cùng các
+              biện pháp an toàn, bảo mật phù hợp. Khách hàng có thể truy cập vào
+              website fahasa.com và đăng nhập Tài khoản FAHASA, tại mục Bảng
+              điều khiển để xem, xóa, chỉnh sửa, hủy hoặc yêu cầu FAHASA xóa,
+              chỉnh sửa, hủy đối với các dữ liệu cá nhân của mình.
+            </p>
+            <p>
+              <b
+                >Cách thức truyền đưa, cung cấp, chuyển giao dữ liệu cá nhân:</b
+              >
+              Dữ liệu cá nhân của khách hàng được truyền đưa, cung cấp, chuyển
+              giao cho bên thứ ba chỉ khi có sự đồng ý của khách hàng, đúng với
+              mục đích, phù hợp và giới hạn trong phạm vi của Chính Sách Bảo Mật
+              Dữ Liệu Cá Nhân này.
+            </p>
+            <li class="highlight">Thời Gian Lưu Trữ</li>
+            <p>
+              Dữ liệu cá nhân của khách hàng sẽ được lưu trữ và bảo mật trên hệ
+              thống máy chủ của FAHASA kể từ thời điểm bắt đầu xử lý dữ liệu cho
+              đến khi việc xử lý dữ liệu kết thúc, trừ trường hợp khách hàng tự
+              ý xóa hoặc có yêu cầu FAHASA xóa dữ liệu cá nhân của mình hoặc
+              pháp luật có quy định khác. Để làm rõ, thời gian xử lý dữ liệu là
+              khoảng thời gian khách hàng duy trì tài khoản đăng nhập tại
+              FAHASA.
+            </p>
+            <li class="highlight">Không Chia Sẻ Dữ Liệu Cá Nhân Khách Hàng</li>
+            <p>
+              Chúng tôi sẽ không cung cấp dữ liệu cá nhân của khách hàng cho bất
+              kỳ bên thứ ba nào khác, trừ một số hoạt động cần thiết dưới đây:
+            </p>
+            <ul>
+              <li>
+                Các đối tác là bên cung cấp dịch vụ cho chúng tôi liên quan đến
+                thực hiện đơn hàng và chỉ giới hạn trong phạm vi thông tin cần
+                thiết cũng như áp dụng các quy định đảm bảo an ninh, bảo mật dữ
+                liệu cá nhân theo quy định pháp luật.
+              </li>
+              <li>
+                Chúng tôi có thể sử dụng dịch vụ từ một (hoặc một số) nhà cung
+                cấp dịch vụ là bên thứ ba để thực hiện các hoạt động liên quan
+                đến website fahasa.com, và khi đó bên thứ ba này có thể tiến
+                hành một (hoặc một số) hoạt động xử lý dữ liệu cá nhân của khách
+                hàng trong quá trình cung cấp các dịch vụ đó. Chúng tôi yêu cầu
+                các bên thứ ba này tuân thủ mọi luật lệ về bảo vệ dữ liệu và các
+                yêu cầu về an ninh liên quan đến dữ liệu cá nhân khách hàng.
+              </li>
+              <li>
+                Các chương trình có tính liên kết, đồng thực hiện, thuê ngoài
+                cho các mục đích được nêu tại Mục 2 của Chính Sách này và luôn
+                áp dụng các yêu cầu bảo mật dữ liệu cá nhân.
+              </li>
+              <li>
+                Yêu cầu pháp lý: chúng tôi có thể tiết lộ dữ liệu cá nhân của
+                khách hàng nếu điều đó do luật pháp yêu cầu và việc tiết lộ như
+                vậy là cần thiết một cách hợp lý để tuân thủ các quy trình pháp
+                lý.
+              </li>
+              <li>
+                Chuyển giao kinh doanh (nếu có): trong trường hợp sáp nhập, hợp
+                nhất toàn bộ hoặc một phần với công ty khác, người mua sẽ có
+                quyền xử lý đối với các dữ liệu cá nhân của khách hàng được
+                chúng tôi lưu trữ, duy trì.
+              </li>
+            </ul>
+            <li class="highlight">An Toàn Dữ Liệu</li>
+            <p>
+              Chúng tôi luôn nỗ lực để giữ an toàn dữ liệu cá nhân của khách
+              hàng, chúng tôi đã và đang thực hiện nhiều biện pháp an toàn, bao
+              gồm:
+            </p>
+            <ul>
+              <li>
+                Bảo đảm an toàn trong môi trường vận hành: chúng tôi lưu trữ dữ
+                liệu cá nhân khách hàng trong môi trường vận hành an toàn và chỉ
+                có nhân viên, đại diện và nhà cung cấp dịch vụ có thể truy cập
+                trên cơ sở cần phải biết. Chúng tôi tuân theo các tiêu chuẩn
+                ngành, pháp luật trong việc bảo mật dữ liệu cá nhân khách hàng.
+              </li>
+              <li>
+                Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công
+                dẫn đến mất mát dữ liệu cá nhân khách hàng, chúng tôi sẽ có
+                trách nhiệm thông báo vụ việc cho cơ quan chức năng để điều tra
+                xử lý kịp thời và thông báo cho khách hàng được biết.
+              </li>
+              <li>
+                Các thông tin thanh toán: được bảo mật theo tiêu chuẩn ngành.
+              </li>
+            </ul>
+            <li class="highlight">
+              Hậu Quả, Thiệt Hại Không Mong Muốn Có Khả Năng Xảy Ra
+            </li>
+            <p>
+              Trong quá trình xử lý dữ liệu cá nhân trên website fahasa.com, mặc
+              dù chúng tôi luôn cố gắng bảo vệ dữ liệu cá nhân của khách hàng ở
+              mức cao nhất, tuy nhiên sự cố bị lộ, mất dữ liệu, xử lý dữ liệu
+              vẫn có thể sẽ xảy ra do những nguyên nhân khách quan (ví dụ: lỗi
+              hệ thống, tin tặc,...). Chúng tôi luôn hợp tác chặt chẽ với các cơ
+              quan nhà nước có thẩm quyền để khắc phục và hạn chế tối đa những
+              hành vi này, và sẽ thông báo cho bạn trong thời gian sớm nhất sau
+              khi có sự cố xảy ra.
+            </p>
+            <li class="highlight">
+              Quyền, Nghĩa Vụ Của Khách Hàng Đối Với Dữ Liệu Cá Nhân
+            </li>
+            <p>
+              <b>Quyền Của Khách Hàng Đối Với Dữ Liệu Cá Nhân Của Mình:</b>
+              Khách hàng có quyền được biết về hoạt động xử lý dữ liệu cá nhân
+              của mình; có quyền đồng ý hoặc không đồng ý, quyền rút lại sự đồng
+              ý cho phép xử lý dữ liệu cá nhân; quyền truy cập để xem, chỉnh sửa
+              hoặc yêu cầu chỉnh sửa, xóa hoặc yêu cầu xóa dữ liệu cá nhân của
+              mình; quyền phản đối, quyền yêu cầu cung cấp, yêu cầu hạn chế xử
+              lý dữ liệu cá nhân; quyền yêu cầu bồi thường thiệt hại khi xảy ra
+              vi phạm; quyền khiếu nại, tố cáo, khởi kiện; và quyền tự bảo vệ dữ
+              liệu cá nhân của mình.
+            </p>
+            <p>
+              <b>Nghĩa Vụ Của Khách Hàng Đối Với Dữ Liệu Cá Nhân Của Mình:</b>
+              Khách hàng có nghĩa vụ tự bảo vệ dữ liệu cá nhân của mình; tôn
+              trọng, bảo vệ dữ liệu cá nhân của người khác; cung cấp đầy đủ,
+              chính xác dữ liệu cá nhân khi đồng ý cho phép FAHASA xử lý dữ liệu
+              cá nhân của mình; yêu cầu FAHASA, các tổ chức, cá nhân khác có
+              liên quan bảo vệ dữ liệu cá nhân của mình; các nghĩa vụ khác theo
+              quy định pháp luật.
+            </p>
+            <li class="highlight">Thông Tin Liên Hệ</li>
+            <p>
+              Trường hợp quý khách có bất kỳ câu hỏi hoặc thắc mắc nào về Chính
+              Sách này, xin vui lòng liên hệ với chúng tôi bằng cách: gọi điện
+              thoại đến hotline 1900636467 hoặc gửi thư điện tử đến địa chỉ
+              email cskh@fahasa.com.vn.
+            </p>
+            <li class="highlight">
+              Các Tổ Chức, Cá Nhân Liên Quan Đến Việc Xử Lý Dữ Liệu
+            </li>
+            <p>Công ty Cổ phần Phát Hành Sách TP HCM - Bookstore</p>
+            <p>
+              Thành lập và hoạt động theo Giấy chứng nhận đăng ký doanh nghiệp
+              số: 0376549230 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp
+              lần đầu ngày 20/10/2024.
+            </p>
+            <p>
+              Địa chỉ liên hệ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh
+            </p>
+            <p>CSKH: cskh@gmail.com</p>
+            <li class="highlight">Hiệu Lực</li>
+            <p>
+              Chính Sách Bảo Mật Dữ Liệu Cá Nhân này được cập nhật và có hiệu
+              lực từ ngày 01/06/2024.
+            </p>
+            <p>
+              FAHASA có thể điều chỉnh Chính Sách này vào bất kỳ thời điểm nào,
+              và đăng tải công khai Chính Sách đã được điều chỉnh trên website
+              fahasa.com. Việc khách hàng tiếp tục sử dụng dịch vụ của FAHASA mà
+              không có bất kỳ khiếu nại nào đối với Chính Sách được điều chỉnh
+              sẽ được hiểu rằng khách hàng đã chấp thuận Chính Sách được điều
+              chỉnh đó của FAHASA.
+            </p>
+          </ol>
+          <h2>ĐẠI DIỆN CÔNG TY CỔ PHẦN PHÁT HÀNH SÁCH BOOKSTORE</h2>
+          <p>
+            Xin cảm ơn quý khách hàng đã tin tưởng và sử dụng dịch vụ của
+            Bookstore!
+          </p>
+        </div>
+      </div>
+      <footer class="container py-5">
+        <div class="row">
+          <!-- Left Side -->
+          <div class="col-md-4">
+            <img src="../img/logo.jpg" alt="Logo" class="mb-3" width="150" />
+            <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+            <p>
+              Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ
+              trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả
+              Hệ Thống Bookstore trên toàn quốc.
+            </p>
+            <div class="d-flex align-items-center">
+              <img
+                src="../img/logo-bo-cong-thuong-da-thong-bao1.webp"
+                alt="Registered Logo"
+                width="100"
+              />
+            </div>
+            <div class="mt-3 d-flex">
+              <!-- Social Media Icons -->
+              <img
+                src="../img/Facebook-on.webp"
+                alt="Facebook"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Insta-on.webp"
+                alt="Instagram"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Youtube-on.webp"
+                alt="YouTube"
+                class="me-2"
+                width="30"
+              />
+            </div>
+
+            <div class="mt-3 d-flex app-download-icons">
+              <!-- App Download Icons -->
+              <img src="../img/android1.webp" alt="Android" class="me-2" />
+              <img src="../img/appstore1.webp" alt="App Store" />
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- Column 1: DỊCH VỤ -->
+              <div class="col-md-3">
+                <h5>DỊCH VỤ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="DieuKhoanSuDung.html">Điều khoản sử dụng</a></li>
+                  <li>
+                    <a href="ChinhSachBaoMatThongTinCaNhan.html"
+                      >Chính sách bảo mật thông tin cá nhân</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoMatThanhToan.html"
+                      >Chính sách bảo mật thanh toán</a
+                    >
+                  </li>
+                  <li><a href="GioiThieu.html">Giới thiệu Bookstore</a></li>
+                </ul>
+              </div>
+              <!-- Column 2: HỖ TRỢ -->
+              <div class="col-md-3">
+                <h5>HỖ TRỢ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="ChinhSachDoiTra.html"
+                      >Chính sách đổi - trả - hoàn tiền</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoHanh.html"
+                      >Chính sách bảo hành - bồi hoàn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachVanChuyen.html">Chính sách vận chuyển</a>
+                  </li>
+                  <li>
+                    <a href="ChinhSachKhachSi.html">Chính sách khách sỉ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Column 3: TÀI KHOẢN CỦA TÔI -->
+              <div class="col-md-3">
+                <h5>TÀI KHOẢN CỦA TÔI</h5>
+                <ul class="list-unstyled">
+                  <li><a href="login.html">Đăng nhập/Tạo mới tài khoản</a></li>
+                  <li><a href="#">Thay đổi địa chỉ khách hàng</a></li>
+                  <li><a href="#">Chi tiết tài khoản</a></li>
+                  <li><a href="#">Lịch sử mua hàng</a></li>
+                </ul>
+              </div>
+              <!-- Column 4: LIÊN HỆ -->
+              <div class="col-md-3">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fa fa-map-marker me-2"></i>12 Nguyễn Văn Bảo,
+                    Phường 4, Gò Vấp, Hồ Chí Minh
+                  </li>
+                  <li><i class="fa fa-envelope me-2"></i>cskh@gmail.com</li>
+                  <li><i class="fa fa-phone me-2"></i>0376549230</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Payment and Delivery Icons -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <img
+                  src="../img/icon_snappy1.webp"
+                  alt="Snappy"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/logo_lex.webp"
+                  alt="LEX"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/Logo_ninjavan.webp"
+                  alt="Ninja Van"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpost1.webp"
+                  alt="VNPost"
+                  class="me-2"
+                  width="50"
+                />
+                <img src="../img/ahamove_logo3.webp" alt="Ahamove" width="50" />
+              </div>
+              <div class="col text-center">
+                <img
+                  src="../img/momopay.webp"
+                  alt="Momo"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpay_logo.webp"
+                  alt="VNPay"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/shopeepay_logo.webp"
+                  alt="ShopeePay"
+                  width="50"
+                />
+              </div>
+            </div>
+
+            <!-- Business Registration Information -->
+            <p class="mt-4 text-center">
+              Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và
+              Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi
+              lần thứ 10, ngày 20/05/2022.
+            </p>
+            <p class="text-center">
+              &copy; 2024 Your Company. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../js/bootstrap.js"></script>
+  </body>
+</html>

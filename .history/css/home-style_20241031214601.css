@@ -1,0 +1,160 @@
+/* styles.css */
+
+body {
+    font-family: 'Manrope', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.search-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.search-part input {
+    border-radius: 20px;
+    padding: 10px 10px 10px 40px;
+    width: 100%;
+}
+
+.icons {
+    margin-left: 10px;
+    display: flex;
+}
+
+.icons img {
+    width: 25px;
+    height: auto;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.banner .text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.discount {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.paulo-coelho-books {
+    font-size: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tabs .ellipse {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+}
+
+.tabs .ellipse.active {
+    background: #007bff;
+}
+
+.best-seller,
+.classics,
+.category,
+.children {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.view-all,
+.view-all-1d,
+.view-all-39 {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.book {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* Align items in a column */
+    justify-content: space-between;
+    /* Evenly distribute space */
+    padding: 10px;
+    height: 400px;
+    /* Set a fixed height for uniformity */
+    margin-bottom: 20px;
+    /* Space between book items */
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    /* Prevent image from shrinking */
+
+    object-fit: cover;
+    /* Ensure image covers the area */
+}
+
+.name span {
+    font-weight: bold;
+    display: block;
+    /* Ensures each name is on a new line */
+    margin-top: 10px;
+    /* Adds space above the name */
+}
+
+.price span {
+    font-size: 16px;
+}
+
+.footer-base {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: #555;
+}

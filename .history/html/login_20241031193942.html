@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+        background-color: #6251dd;
+      }
+      .login-container {
+        background-color: #fff;
+        max-width: 750px;
+        margin: 0 auto;
+        padding-top: 10px; /* Reduced padding */
+        padding-bottom: 10px; /* Reduced padding */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+      .login-hero-image {
+        aspect-ratio: 0.7;
+        object-fit: contain;
+        width: 100%;
+      }
+      .login-logo {
+        aspect-ratio: 1.54;
+        object-fit: contain;
+        width: 100px;
+        max-width: 100%;
+      }
+      .welcome-text {
+        color: rgba(9, 9, 55, 0.6);
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .login-header {
+        color: #090937;
+        font-weight: 700;
+        font-size: 28px;
+      }
+      .input-label {
+        color: #090937;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      .input-field {
+        border-radius: 4px;
+        background-color: #f4f4ff;
+        min-height: 50px;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+      }
+      .password-input-container {
+        border-radius: 4px;
+        background-color: #f4f4ff;
+        display: flex;
+        min-height: 50px;
+        align-items: center;
+        padding: 0 16px;
+      }
+      .password-toggle {
+        width: 16px;
+      }
+      .login-options .form-check-label {
+        font-weight: 700;
+        color: #6251dd;
+      }
+      .login-button {
+        background-color: #ef6b4a;
+        color: #fff;
+        margin-top: 20px;
+        min-height: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+      }
+      .register-button {
+        background-color: #fff;
+        color: #6251dd;
+        margin-top: 10px;
+        border: 1px solid #6251dd;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="login-container container-fluid vh-50 d-flex align-items-center"
+    >
+      <div class="row w-100">
+        <div class="col-lg-7 d-flex flex-column align-items-center">
+          <img
+            src="../img/banner_login.png"
+            alt="Login hero image"
+            class="login-hero-image"
+          />
+        </div>
+        <div class="col-lg-5 d-flex flex-column align-items-start">
+          <div class="text-center w-100">
+            <img
+              src="../img/logo.jpg"
+              alt="Company logo"
+              class="login-logo mx-auto"
+            />
+            <h2 class="welcome-text">Welcome back!</h2>
+            <h1 class="login-header">Login to your account</h1>
+          </div>
+          <form class="w-100">
+            <label for="email" class="input-label">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control input-field mb-3"
+              placeholder="john@mail.com"
+              required
+            />
+
+            <label for="password" class="input-label">Password</label>
+            <div class="password-input-container mb-3">
+              <input
+                type="password"
+                id="password"
+                class="form-control border-0 bg-transparent password-input"
+                required
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/15e8329969f04d94993a94c721e219c8/290626f276668f0d2dd3a1a15fca8e0984649b510cc87ac65e4a01a850c9afd5?apiKey=15e8329969f04d94993a94c721e219c8&"
+                alt="Show password"
+                class="password-toggle"
+              />
+            </div>
+
+            <div class="form-check login-options">
+              <input type="checkbox" class="form-check-input" id="remember" />
+              <label class="form-check-label" for="remember">Remember Me</label>
+            </div>
+
+            <button type="submit" class="btn login-button w-100 mt-3">
+              Login
+            </button>
+            <button type="button" class="btn register-button w-100 mt-2">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

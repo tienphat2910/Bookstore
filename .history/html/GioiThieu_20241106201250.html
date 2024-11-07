@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu Bookstore</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+      .highlight {
+        color: rgb(248, 88, 13);
+      }
+      .content {
+        padding: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .nav a span:hover {
+        color: rgb(71, 167, 154);
+      }
+      .content-item {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <!-- Hamburger Menu Icon -->
+          <div class="dropdown">
+            <button
+              class="btn btn-light me-3"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dropdown Content -->
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+              <h5 class="mb-3">Danh sách sản phẩm</h5>
+              <div class="d-flex">
+                <div class="me-4">
+                  <h6><a href="#" class="dropdown-item">Sách Trong nước</a></h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Văn học</a></li>
+                    <li><a href="#" class="dropdown-item">Kinh tế</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Tâm Lý - Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách thiếu nhi</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Sách Giáo Khoa - Tham Khảo</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Sách ngoại ngữ</a>
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">
+                    <a href="#" class="dropdown-item">FOREIGN BOOKS</a>
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Children</a></li>
+                    <li><a href="#" class="dropdown-item">Classic</a></li>
+                    <li><a href="#" class="dropdown-item">Best seller</a></li>
+                    <li><a href="#" class="dropdown-item">Fiction</a></li>
+                    <li><a href="#" class="dropdown-item">Dictionaries</a></li>
+                    <li><a href="#" class="dropdown-item">Comic</a></li>
+                    <li><a href="#" class="dropdown-item">Computing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Technology & Engineering</a
+                      >
+                    </li>
+                    <li><a href="#" class="dropdown-item">History</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h6>Văn học</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tiểu Thuyết</a></li>
+                    <li><a href="#" class="dropdown-item">Truyện Ngắn</a></li>
+                    <li><a href="#" class="dropdown-item">Light Novel</a></li>
+                  </ul>
+                  <h6 class="mt-3">Kinh tế</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a href="#" class="dropdown-item">Tài chính ngân hàng</a>
+                    </li>
+                    <li><a href="#" class="dropdown-item">Marketing</a></li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Nhân vật - Bài học kinh doanh</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item">Quản trị - lãnh đạo</a>
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Khởi nghiệp - làm giàu</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Chứng khoán - BĐS - Đầu tư</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >Kế toán - Kiểm Toán - Thuế</a
+                      >
+                    </li>
+                  </ul>
+                  <h6 class="mt-3">Tâm Lý - Kỹ năng sống</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li><a href="#" class="dropdown-item">Tâm lý</a></li>
+                    <li><a href="#" class="dropdown-item">Kỹ năng sống</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="Logo" class="logo-img" />
+          </div>
+        </div>
+        <!-- Search and Icons Part -->
+        <div class="search-part">
+          <input
+            class="form-control me-2 search-input"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </div>
+        <div class="icons d-flex align-items-center">
+          <div class="profile me-3">
+            <img src="../img/user.png" alt="User" class="icon-outline-user" />
+          </div>
+          <div class="heart me-3">
+            <img src="../img/heart.png" alt="Wishlist" class="heart-icon" />
+          </div>
+          <div class="shop">
+            <img
+              src="../img/cart.png"
+              alt="Shopping Cart"
+              class="icon-outline-shopping-cart"
+            />
+          </div>
+        </div>
+      </header>
+      <nav>
+        <a
+          style="text-decoration: none; color: black"
+          class="home-Link"
+          href="index.html"
+          >Trang chủ</a
+        >
+        >
+        <a
+          style="text-decoration: none"
+          href="ChinhSachBaoMatThanhToan.html"
+          class="highlight"
+          >Chính sách bảo mật thanh toán</a
+        >
+      </nav>
+
+      <div class="content my-5">
+        <h1>Giới thiệu Fahasa</h1>
+        <h3 class="text-center">THÔNG TIN GIỚI THIỆU CÔNG TY FAHASA</h3>
+        <p class="mb-3"><b>Nguồn nhân lực</b></p>
+        <p>
+          Để xây dựng Thương hiệu mạnh, một trong những định hướng quan trọng
+          hàng đầu của FAHASA là chiến lược phát triển nguồn nhân lực - mấu chốt
+          của mọi sự thành công.
+        </p>
+        <p>
+          FAHASA có hơn 2.200 CB-CNV, trình độ chuyên môn giỏi, nhiệt tình, năng
+          động, chuyên nghiệp. Lực lượng quản lý FAHASA có thâm niên công tác,
+          giỏi nghiệp vụ nhiều kinh nghiệm, có khả năng quản lý tốt và điều hành
+          đơn vị hoạt động hiệu quả.
+        </p>
+        <p>
+          Kết hợp tuyển dụng nguồn nhân lực đầu vào có chất lượng và kế hoạch
+          bồi dưỡng kiến thức, rèn luyện bổ sung các kỹ năng và chuẩn bị đội ngũ
+          kế thừa theo hướng chính qui thông qua các lớp học ngắn hạn, dài hạn;
+          các lớp bồi dưỡng CB-CNV được tổ chức trong nước cũng như ở nước ngoài
+          đều được lãnh đạo FAHASA đặc biệt quan tâm và tạo điều kiện triển khai
+          thực hiện. Chính vì thế, trình độ chuyên môn của đội ngũ CB-CNV ngày
+          càng được nâng cao, đáp ứng nhu cầu ngày càng tăng của công việc cũng
+          như sự phát triển của xã hội đang trên đường hội nhập.
+        </p>
+        <p class="mb-3"><b>Về hàng hóa</b></p>
+        <p>
+          Công ty FAHASA chuyên kinh doanh: sách quốc văn, ngoại văn, văn hóa
+          phẩm, văn phòng phẩm, dụng cụ học tập, quà lưu niệm, đồ chơi dành cho
+          trẻ em… Một số Nhà sách trực thuộc Công ty FAHASA còn kinh doanh các
+          mặt hàng siêu thị như: hàng tiêu dùng, hàng gia dụng, hóa mỹ phẩm…
+        </p>
+        <p>
+          Sách quốc văn với nhiều thể loại đa dạng như sách giáo khoa – tham
+          khảo, giáo trình, sách học ngữ, từ điển, sách tham khảo thuộc nhiều
+          chuyên ngành phong phú: văn học, tâm lý – giáo dục, khoa học kỹ thuật,
+          khoa học kinh tế - xã hội, khoa học thường thức, sách phong thủy, nghệ
+          thuật sống, danh ngôn, sách thiếu nhi, truyện tranh, truyện đọc, từ
+          điển, công nghệ thông tin, khoa học – kỹ thuật, nấu ăn, làm đẹp... của
+          nhiều Nhà xuất bản, nhà cung cấp sách có uy tín như: NXB Trẻ, Giáo
+          Dục, Kim Đồng, Văn hóa -Văn Nghệ, Tổng hợp TP.HCM, Chính Trị Quốc Gia;
+          Công ty Đông A, Nhã Nam, Bách Việt, Alphabook, Thái Hà, Minh Lâm, Đinh
+          Tị, Minh Long, TGM, Sáng Tạo Trí Việt, Khang Việt, Toàn Phúc…
+        </p>
+        <p>
+          Sách ngoại văn bao gồm: từ điển, giáo trình, tham khảo, truyện tranh
+          thiếu nhi , sách học ngữ, từ vựng, ngữ pháp, luyện thi TOEFL, TOEIC,
+          IELS…được nhập từ các NXB nước ngoài như: Cambridge, Mc Graw-Hill,
+          Pearson Education, Oxford, Macmillan, Cengage Learning…
+        </p>
+        <p>
+          Văn phòng phẩm, dụng cụ học tập, đồ chơi dành cho trẻ em, hàng lưu
+          niệm… đa dạng, phong phú, mẫu mã đẹp, chất lượng tốt, được cung ứng
+          bởi các công ty, nhà cung cấp uy tín như: Thiên Long, XNK Bình Tây,
+          Hạnh Thuận, Ngô Quang, Việt Văn, Trương Vui, Hương Mi, Phương Nga,
+          Việt Tinh Anh, Chăm sóc trẻ em Việt, Mẹ và em bé…
+        </p>
+        <p>
+          Cùng với việc phát hành độc quyền nhiều ấn bản các loại của các Nhà
+          xuất bản là năng lực in ấn, sản xuất cung ứng nguồn hàng của Xí nghiệp
+          in FAHASA, đã giúp Công ty luôn chủ động được nguồn hàng, nhất là các
+          mặt hàng độc quyền như: lịch bloc, tập học sinh, sổ tay cao cấp,
+          agenda, văn phòng phẩm, dụng cụ học tập…
+        </p>
+        <p class="mb-3"><b>Hệ thống Nhà sách chuyên nghiệp</b></p>
+        <p>
+          Mạng lưới phát hành của Công ty FAHASA rộng khắp trên toàn quốc, gồm 5
+          Trung tâm sách, 1 Xí nghiệp in và với gần 60 Nhà sách trải dọc khắp
+          các tỉnh thành từ TP.HCM đến Thủ Đô Hà Nội, miền Trung, Tây Nguyên,
+          miền Đông và Tây Nam Bộ như: Hà Nội, Vĩnh Phúc, Hải Phòng, Thanh Hóa,
+          Hà Tĩnh, Huế, Đà Nẵng, Quảng Nam, Quảng Ngãi, Quy Nhơn, Nha Trang, Gia
+          Lai, Đăklăk, Bảo Lộc - Lâm Đồng, Ninh Thuận, Bình Thuận, Bình Phước,
+          Bình Dương, Đồng Nai, Vũng Tàu, Long An, Tiền Giang, Bến Tre, Vĩnh
+          Long, Cần Thơ, Hậu Giang, An Giang, Kiên Giang, Sóc Trăng, Cà Mau.
+        </p>
+        <p>
+          Năm 2004 Công ty đã được Cục Sở hữu Trí tuệ Việt Nam công nhận sở hữu
+          độc quyền tên thương hiệu FAHASA.
+        </p>
+        <p>
+          Năm 2005, Công ty FAHASA được Trung tâm sách kỷ lục Việt Nam công nhận
+          là đơn vị có hệ thống Nhà sách nhiều nhất Việt Nam; được Tạp chí The
+          Guide công nhận Nhà sách Xuân Thu - đơn vị trực thuộc Công ty FAHASA
+          là Nhà sách Ngoại văn đẹp nhất, lớn nhất, quy mô nhất, nhiều sách nhất
+          ở Thành phố Hồ Chí Minh và cả nước.
+        </p>
+        <p>
+          Năm 2012 FAHASA là Doanh nghiệp nằm trong Top 10 nhà bán lẻ hàng đầu
+          Việt Nam. Đặc biệt năm 2006, 2009, 2012 FAHASA đạt danh hiệu Top 500
+          Nhà bán lẻ hàng đầu Châu Á Thái Bình Dương, giải thưởng được tạp chí
+          Retail Asia (Singapore) bình chọn.
+        </p>
+        <p class="mb-3"><b>Kinh nghiệm hoạt động</b></p>
+      </div>
+      <footer class="container py-5">
+        <div class="row">
+          <!-- Left Side -->
+          <div class="col-md-4">
+            <img src="../img/logo.jpg" alt="Logo" class="mb-3" width="150" />
+            <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+            <p>
+              Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ
+              trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả
+              Hệ Thống Bookstore trên toàn quốc.
+            </p>
+            <div class="d-flex align-items-center">
+              <img
+                src="../img/logo-bo-cong-thuong-da-thong-bao1.webp"
+                alt="Registered Logo"
+                width="100"
+              />
+            </div>
+            <div class="mt-3 d-flex">
+              <!-- Social Media Icons -->
+              <img
+                src="../img/Facebook-on.webp"
+                alt="Facebook"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Insta-on.webp"
+                alt="Instagram"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Youtube-on.webp"
+                alt="YouTube"
+                class="me-2"
+                width="30"
+              />
+            </div>
+
+            <div class="mt-3 d-flex app-download-icons">
+              <!-- App Download Icons -->
+              <img src="../img/android1.webp" alt="Android" class="me-2" />
+              <img src="../img/appstore1.webp" alt="App Store" />
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- Column 1: DỊCH VỤ -->
+              <div class="col-md-3">
+                <h5>DỊCH VỤ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="DieuKhoanSuDung.html">Điều khoản sử dụng</a></li>
+                  <li>
+                    <a href="ChinhSachBaoMatThongTinCaNhan.html"
+                      >Chính sách bảo mật thông tin cá nhân</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoMatThanhToan.html"
+                      >Chính sách bảo mật thanh toán</a
+                    >
+                  </li>
+                  <li><a href="GioiThieu.html">Giới thiệu Bookstore</a></li>
+                </ul>
+              </div>
+              <!-- Column 2: HỖ TRỢ -->
+              <div class="col-md-3">
+                <h5>HỖ TRỢ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="ChinhSachDoiTra.html"
+                      >Chính sách đổi - trả - hoàn tiền</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoHanh.html"
+                      >Chính sách bảo hành - bồi hoàn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachVanChuyen.html">Chính sách vận chuyển</a>
+                  </li>
+                  <li>
+                    <a href="ChinhSachKhachSi.html">Chính sách khách sỉ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Column 3: TÀI KHOẢN CỦA TÔI -->
+              <div class="col-md-3">
+                <h5>TÀI KHOẢN CỦA TÔI</h5>
+                <ul class="list-unstyled">
+                  <li><a href="login.html">Đăng nhập/Tạo mới tài khoản</a></li>
+                  <li><a href="#">Thay đổi địa chỉ khách hàng</a></li>
+                  <li><a href="#">Chi tiết tài khoản</a></li>
+                  <li><a href="#">Lịch sử mua hàng</a></li>
+                </ul>
+              </div>
+              <!-- Column 4: LIÊN HỆ -->
+              <div class="col-md-3">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fa fa-map-marker me-2"></i>12 Nguyễn Văn Bảo,
+                    Phường 4, Gò Vấp, Hồ Chí Minh
+                  </li>
+                  <li><i class="fa fa-envelope me-2"></i>cskh@gmail.com</li>
+                  <li><i class="fa fa-phone me-2"></i>0376549230</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Payment and Delivery Icons -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <img
+                  src="../img/icon_snappy1.webp"
+                  alt="Snappy"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/logo_lex.webp"
+                  alt="LEX"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/Logo_ninjavan.webp"
+                  alt="Ninja Van"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpost1.webp"
+                  alt="VNPost"
+                  class="me-2"
+                  width="50"
+                />
+                <img src="../img/ahamove_logo3.webp" alt="Ahamove" width="50" />
+              </div>
+              <div class="col text-center">
+                <img
+                  src="../img/momopay.webp"
+                  alt="Momo"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpay_logo.webp"
+                  alt="VNPay"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/shopeepay_logo.webp"
+                  alt="ShopeePay"
+                  width="50"
+                />
+              </div>
+            </div>
+
+            <!-- Business Registration Information -->
+            <p class="mt-4 text-center">
+              Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và
+              Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi
+              lần thứ 10, ngày 20/05/2022.
+            </p>
+            <p class="text-center">
+              &copy; 2024 Your Company. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/home_script.js"></script>
+  </body>
+</html>
