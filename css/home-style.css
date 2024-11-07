@@ -346,3 +346,71 @@ footer p {
 .hidden {
     display: none !important;
 }
+
+.product-item {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Cập nhật style cho logo */
+.logo-img {
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Style cho các icon trong header */
+.icon-outline-user,
+.heart-icon,
+.icon-outline-shopping-cart {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* Style cho ảnh sản phẩm trong trang chủ */
+.book img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+}
+
+/* Style cho ảnh trong kết quả tìm kiếm */
+.search-results-container img {
+    width: 50px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* Style cho ảnh trong chi tiết sản phẩm */
+.product-detail-image {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Style cho ảnh trong footer */
+footer .mt-3 img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+footer .app-download-icons img {
+    width: 110px;
+    height: 40px;
+    object-fit: contain;
+}
+
+footer .col img {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+}

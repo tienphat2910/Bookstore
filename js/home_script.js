@@ -105,63 +105,72 @@ const books = [
 function loadBooks(category) {
     const filteredBooks = books.filter(book => book.category.includes(category));
     const container = document.getElementById(`${category}-books`);
-
-    // Clear existing content
     container.innerHTML = "";
 
-    // Load the first 4 books
     filteredBooks.slice(0, 4).forEach(book => {
         const bookHTML = `
             <div class="col-md-3 mb-4">
-              <div class="book">
-                <img src="${book.image}" alt="${book.title}" class="picture" />
-                <div class="text-9">
-                  <div class="name">
-                    <span class="${book.title.toLowerCase().replace(/\s+/g, "-")}" style="display: block;">${book.title}</span>
-                    <span style="display: block; color: #777">${book.author}</span>
-                  </div>
-                  <div class="price">
-                    <span class="price-a">${book.price}</span>
-                  </div>
+                <div class="book product-item" data-product-id="${book.title}">
+                    <img src="${book.image}" alt="${book.title}" class="picture" />
+                    <div class="text-9">
+                        <div class="name">
+                            <span class="${book.title.toLowerCase().replace(/\s+/g, "-")}">${book.title}</span>
+                            <span style="display: block; color: #777">${book.author}</span>
+                        </div>
+                        <div class="price">
+                            <span class="price-a">${book.price}</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>`;
         container.innerHTML += bookHTML;
     });
+
+    addProductClickEvents(container);
 }
 
 function loadAllBooks(category) {
     const filteredBooks = books.filter(book => book.category.includes(category));
     const container = document.getElementById(`${category}-books`);
-
-    // Clear existing content
     container.innerHTML = "";
 
-    // Load all books
     filteredBooks.forEach(book => {
         const bookHTML = `
             <div class="col-md-3 mb-4">
-              <div class="book">
-                <img src="${book.image}" alt="${book.title}" class="picture" />
-                <div class="text-9">
-                  <div class="name">
-                    <span class="${book.title.toLowerCase().replace(/\s+/g, "-")}" style="display: block;">${book.title}</span>
-                    <span style="display: block; color: #777">${book.author}</span>
-                  </div>
-                  <div class="price">
-                    <span class="price-a">${book.price}</span>
-                  </div>
+                <div class="book product-item" data-product-id="${book.title}">
+                    <img src="${book.image}" alt="${book.title}" class="picture" />
+                    <div class="text-9">
+                        <div class="name">
+                            <span class="${book.title.toLowerCase().replace(/\s+/g, "-")}">${book.title}</span>
+                            <span style="display: block; color: #777">${book.author}</span>
+                        </div>
+                        <div class="price">
+                            <span class="price-a">${book.price}</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>`;
         container.innerHTML += bookHTML;
     });
+
+    addProductClickEvents(container);
 }
 
-// Load initial books
-loadBooks("best-seller");
-loadBooks("classics");
-loadBooks("children");
+function addProductClickEvents(container) {
+    const productItems = container.querySelectorAll('.product-item');
+    productItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            window.location.href = `ChiTietSanPham.html?id=${productId}`;
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadBooks("best-seller");
+    loadBooks("classics");
+    loadBooks("children");
+});
 
 // Event listeners for "View All"
 document.querySelectorAll(".view-all").forEach(button => {
@@ -191,7 +200,6 @@ function searchBooks(keyword) {
     const searchKeyword = keyword.toLowerCase().trim();
     const resultsContainer = document.getElementById('search-results');
     
-    // Nếu không có từ khóa, ẩn kết quả
     if (!searchKeyword) {
         resultsContainer.classList.remove('active');
         return;
@@ -202,10 +210,7 @@ function searchBooks(keyword) {
         book.author.toLowerCase().includes(searchKeyword)
     );
 
-    // Hiển thị container kết quả
     resultsContainer.classList.add('active');
-    
-    // Xóa kết quả cũ
     resultsContainer.innerHTML = "";
     
     if (results.length === 0) {
@@ -213,10 +218,9 @@ function searchBooks(keyword) {
         return;
     }
 
-    // Hiển thị kết quả mới
     results.forEach(book => {
         const bookHTML = `
-            <div class="col-12 p-2">
+            <div class="col-12 p-2 product-item" data-product-id="${book.title}">
                 <div class="d-flex align-items-center">
                     <img src="${book.image}" alt="${book.title}" style="width: 50px; height: 70px; object-fit: cover;" class="me-3" />
                     <div>
@@ -227,6 +231,14 @@ function searchBooks(keyword) {
                 </div>
             </div>`;
         resultsContainer.innerHTML += bookHTML;
+    });
+
+    const searchResults = document.querySelectorAll('#search-results .product-item');
+    searchResults.forEach(item => {
+        item.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            window.location.href = `ChiTietSanPham.html?id=${productId}`;
+        });
     });
 }
 

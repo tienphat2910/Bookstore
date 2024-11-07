@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between align-items-center py-3">
+            <div class="d-flex align-items-center">
+                <!-- Hamburger Menu Icon -->
+                <div class="dropdown">
+                    <button class="btn btn-light me-3" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+                        <h5 class="mb-3">Danh sách sản phẩm</h5>
+                        <div class="d-flex">
+                            <div class="me-4">
+                                <h6><a href="#" class="dropdown-item">Sách Trong nước</a></h6>
+                                <ul class="list-unstyled ms-3">
+                                    <li><a href="#" class="dropdown-item">Văn học</a></li>
+                                    <li><a href="#" class="dropdown-item">Kinh tế</a></li>
+                                    <li><a href="#" class="dropdown-item">Tâm Lý - Kỹ năng sống</a></li>
+                                    <li><a href="#" class="dropdown-item">Sách thiếu nhi</a></li>
+                                    <li><a href="#" class="dropdown-item">Sách Giáo Khoa - Tham Khảo</a></li>
+                                    <li><a href="#" class="dropdown-item">Sách ngoại ngữ</a></li>
+                                </ul>
+                                <h6 class="mt-3"><a href="#" class="dropdown-item">FOREIGN BOOKS</a></h6>
+                                <ul class="list-unstyled ms-3">
+                                    <li><a href="#" class="dropdown-item">Children</a></li>
+                                    <li><a href="#" class="dropdown-item">Classic</a></li>
+                                    <li><a href="#" class="dropdown-item">Best seller</a></li>
+                                    <!-- ... các mục khác ... -->
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Văn học</h6>
+                                <ul class="list-unstyled ms-3">
+                                    <li><a href="#" class="dropdown-item">Tiểu Thuyết</a></li>
+                                    <li><a href="#" class="dropdown-item">Truyện Ngắn</a></li>
+                                    <li><a href="#" class="dropdown-item">Light Novel</a></li>
+                                </ul>
+                                <!-- ... các mục khác ... -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="home.html">
+                        <img src="../img/logo.jpg" alt="Logo" class="logo-img" />
+                    </a>
+                </div>
+            </div>
+            <!-- Search and Icons Part -->
+            <div class="search-part">
+                <input class="form-control me-2 search-input" type="text" placeholder="Search" aria-label="Search" />
+                <div id="search-results" class="row mt-3 search-results-container"></div>
+            </div>
+            <div class="icons d-flex align-items-center">
+                <div class="profile me-3">
+                    <img src="../img/user.png" alt="User" class="icon-outline-user" />
+                </div>
+                <div class="heart me-3">
+                    <img src="../img/heart.png" alt="Wishlist" class="heart-icon" />
+                </div>
+                <div class="shop">
+                    <img src="../img/cart.png" alt="Shopping Cart" class="icon-outline-shopping-cart" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Chi tiết sản phẩm -->
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Ảnh sản phẩm -->
+                <div class="col-md-5">
+                    <img id="productImage" src="" alt="Sản phẩm" class="product-detail-image">
+                </div>
+                
+                <!-- Thông tin sản phẩm -->
+                <div class="col-md-7 product-detail-info">
+                    <h2 id="productName" class="product-detail-title"></h2>
+                    <p id="productAuthor" class="product-detail-author"></p>
+                    <h3 id="productPrice" class="product-detail-price"></h3>
+                    <div class="mt-4">
+                        <h4>Mô tả sản phẩm</h4>
+                        <p id="productDescription" class="product-detail-description"></p>
+                    </div>
+                    <div class="mt-4 product-detail-buttons">
+                        <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+                        <button class="btn btn-outline-primary ms-2">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer giữ nguyên -->
+    </div>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/home_script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            const product = getProductDetails(productId);
+            
+            if (product) {
+                document.getElementById('productImage').src = product.image;
+                document.getElementById('productName').textContent = product.title;
+                document.getElementById('productAuthor').textContent = product.author;
+                document.getElementById('productPrice').textContent = product.price;
+                document.getElementById('productDescription').textContent = 
+                    'Đây là cuốn sách "' + product.title + '" của tác giả ' + product.author;
+            }
+        });
+
+        function getProductDetails(productId) {
+            return books.find(book => book.title === productId);
+        }
+    </script>
+</body>
+</html>
