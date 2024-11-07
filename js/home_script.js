@@ -188,38 +188,62 @@ document.querySelectorAll(".view-all").forEach(button => {
 
 // Chức năng tìm kiếm sách
 function searchBooks(keyword) {
-    const searchKeyword = keyword.toLowerCase();
+    const searchKeyword = keyword.toLowerCase().trim();
+    const resultsContainer = document.getElementById('search-results');
+    
+    // Nếu không có từ khóa, ẩn kết quả
+    if (!searchKeyword) {
+        resultsContainer.classList.remove('active');
+        return;
+    }
+
     const results = books.filter(book => 
         book.title.toLowerCase().includes(searchKeyword) || 
         book.author.toLowerCase().includes(searchKeyword)
     );
 
-    const container = document.getElementById('search-results');
-    container.innerHTML = ""; // Xóa kết quả cũ
+    // Hiển thị container kết quả
+    resultsContainer.classList.add('active');
+    
+    // Xóa kết quả cũ
+    resultsContainer.innerHTML = "";
+    
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="col-12 p-3">Không tìm thấy kết quả</div>';
+        return;
+    }
+
+    // Hiển thị kết quả mới
     results.forEach(book => {
         const bookHTML = `
-            <div class="col-md-3 mb-4">
-              <div class="book">
-                <img src="${book.image}" alt="${book.title}" class="picture" />
-                <div class="text-9">
-                  <div class="name">
-                    <span>${book.title}</span>
-                    <span style="display: block; color: #777">${book.author}</span>
-                  </div>
-                  <div class="price">
-                    <span class="price-a">${book.price}</span>
-                  </div>
+            <div class="col-12 p-2">
+                <div class="d-flex align-items-center">
+                    <img src="${book.image}" alt="${book.title}" style="width: 50px; height: 70px; object-fit: cover;" class="me-3" />
+                    <div>
+                        <div class="fw-bold">${book.title}</div>
+                        <div class="text-muted">${book.author}</div>
+                        <div class="text-primary">${book.price}</div>
+                    </div>
                 </div>
-              </div>
             </div>`;
-        container.innerHTML += bookHTML;
+        resultsContainer.innerHTML += bookHTML;
     });
 }
 
-// Lắng nghe sự kiện nhập từ khóa tìm kiếm
+// Thêm event listener cho input tìm kiếm
 document.querySelector('.search-input').addEventListener('input', (e) => {
     const keyword = e.target.value;
     searchBooks(keyword);
+});
+
+// Thêm event listener để ẩn kết quả khi click ra ngoài
+document.addEventListener('click', (e) => {
+    const searchContainer = document.querySelector('.search-part');
+    const resultsContainer = document.getElementById('search-results');
+    
+    if (!searchContainer.contains(e.target)) {
+        resultsContainer.classList.remove('active');
+    }
 });
 
 // Chức năng thêm sách vào yêu thích
