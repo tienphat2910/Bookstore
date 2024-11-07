@@ -169,6 +169,30 @@
           );
         });
       });
+
+      function handleLogin() {
+        // Xử lý đăng nhập
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Giả lập kiểm tra đăng nhập
+        if (username && password) {
+            // Lưu trạng thái đăng nhập
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('username', username);
+
+            // Kiểm tra xem có URL chuyển hướng không
+            const redirectUrl = sessionStorage.getItem('redirectAfterLogin');
+            if (redirectUrl) {
+                sessionStorage.removeItem('redirectAfterLogin'); // Xóa URL chuyển hướng
+                window.location.href = redirectUrl; // Chuyển hướng về trang giỏ hàng
+            } else {
+                window.location.href = 'home.html'; // Chuyển hướng về trang chủ
+            }
+        } else {
+            alert('Vui lòng nhập đầy đủ thông tin!');
+        }
+      }
     </script>
   </body>
 </html>

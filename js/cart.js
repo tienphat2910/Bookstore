@@ -132,4 +132,52 @@ function updateTotalPrice() {
 // Khởi tạo giỏ hàng khi trang được load
 document.addEventListener('DOMContentLoaded', function() {
     displayCart();
-}); 
+});
+
+// Kiểm tra trạng thái đăng nhập
+function isLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === 'true';
+}
+
+// Xử lý nút thanh toán
+function handleCheckout() {
+    if (!isLoggedIn()) {
+        // Lưu URL hiện tại vào session storage để sau khi đăng nhập có thể quay lại
+        sessionStorage.setItem('redirectAfterLogin', 'GioHang.html');
+        
+        // Hiển thị thông báo
+        Swal.fire({
+            title: 'Bạn cần đăng nhập',
+            text: 'Vui lòng đăng nhập để tiếp tục thanh toán',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Đăng nhập',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Chuyển hướng đến trang đăng nhập
+                window.location.href = 'login.html';
+            }
+        });
+    } else {
+        // Nếu đã đăng nhập, tiếp tục quy trình thanh toán
+        proceedToCheckout();
+    }
+}
+
+// Hàm xử lý thanh toán
+function proceedToCheckout() {
+    // Kiểm tra giỏ hàng có trống không
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        Swal.fire({
+            title: 'Giỏ hàng trống',
+            text: 'Vui lòng thêm sản phẩm vào giỏ hàng',
+            icon: 'warning'
+        });
+        return;
+    }
+
+    // Tiếp tục quy trình thanh toán
+    window.location.href = 'ThanhToan.html';
+} 

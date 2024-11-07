@@ -572,3 +572,24 @@ footer .col img {
 .coupon-message {
     animation: fadeIn 0.3s ease-in;
 }
+
+/* Style cho SweetAlert */
+.swal2-popup {
+    font-family: "Manrope", sans-serif;
+}
+
+.swal2-title {
+    font-size: 1.5rem;
+}
+
+.swal2-html-container {
+    font-size: 1rem;
+}
+
+.swal2-confirm {
+    background-color: #007bff !important;
+}
+
+.swal2-cancel {
+    background-color: #6c757d !important;
+}

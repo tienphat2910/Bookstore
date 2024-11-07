@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/home-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -110,7 +111,7 @@
                         <h5>Tổng tiền:</h5>
                         <h5 id="total-price" class="text-primary">0 đ</h5>
                     </div>
-                    <button class="btn btn-primary w-100">Thanh toán</button>
+                    <button class="btn btn-primary w-100" onclick="handleCheckout()">Thanh toán</button>
                 </div>
             </div>
         </div>
@@ -219,5 +220,6 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/home_script.js"></script>
     <script src="../js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html> 
