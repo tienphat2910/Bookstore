@@ -1,4 +1,4 @@
-const books = [
+window.books = [
     // Best Sellers
     {
         category: ["best-seller"],

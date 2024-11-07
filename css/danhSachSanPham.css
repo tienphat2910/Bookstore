@@ -1,0 +1,202 @@
+/* Styles cho phần bộ lọc */
+.filter-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.filter-section .form-label {
+    font-weight: bold;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group h5 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Styles cho price range */
+.price-range {
+    margin-top: 15px;
+}
+
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.price-inputs input {
+    width: 100px;
+}
+
+/* Styles cho category filters */
+.category-filters {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.form-check {
+    margin-bottom: 8px;
+}
+
+/* Styles cho rating filters */
+.rating-filters .form-check {
+    margin-bottom: 10px;
+}
+
+/* Styles cho product grid */
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.product-author {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: #ff3366;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Styles cho pagination */
+.pagination .page-link {
+    color: #007bff;
+    border: 1px solid #dee2e6;
+    margin: 0 3px;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-section {
+        margin-bottom: 20px;
+    }
+    
+    .price-inputs input {
+        width: 80px;
+    }
+}
+
+.card {
+    transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    padding: 1rem;
+    background: #fff;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    height: 2.4rem;
+    overflow: hidden;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+#products-container {
+    min-height: 400px;
+}
+
+.product-card {
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.card-text strong {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    margin-top: auto;
+}
+
+#sortSelect {
+    min-width: 200px;
+}
