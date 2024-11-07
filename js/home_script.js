@@ -186,5 +186,92 @@ document.querySelectorAll(".view-all").forEach(button => {
 });
 
 
+// Chức năng tìm kiếm sách
+function searchBooks(keyword) {
+    const searchKeyword = keyword.toLowerCase();
+    const results = books.filter(book => 
+        book.title.toLowerCase().includes(searchKeyword) || 
+        book.author.toLowerCase().includes(searchKeyword)
+    );
 
+    const container = document.getElementById('search-results');
+    container.innerHTML = ""; // Xóa kết quả cũ
+    results.forEach(book => {
+        const bookHTML = `
+            <div class="col-md-3 mb-4">
+              <div class="book">
+                <img src="${book.image}" alt="${book.title}" class="picture" />
+                <div class="text-9">
+                  <div class="name">
+                    <span>${book.title}</span>
+                    <span style="display: block; color: #777">${book.author}</span>
+                  </div>
+                  <div class="price">
+                    <span class="price-a">${book.price}</span>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        container.innerHTML += bookHTML;
+    });
+}
 
+// Lắng nghe sự kiện nhập từ khóa tìm kiếm
+document.querySelector('.search-input').addEventListener('input', (e) => {
+    const keyword = e.target.value;
+    searchBooks(keyword);
+});
+
+// Chức năng thêm sách vào yêu thích
+const favoriteBooks = [];
+
+function addToFavorites(bookTitle) {
+    const book = books.find(b => b.title === bookTitle);
+    if (book && !favoriteBooks.includes(book)) {
+        favoriteBooks.push(book);
+        alert(`Đã thêm "${book.title}" vào yêu thích!`);
+    }
+}
+
+// Thêm sự kiện vào biểu tượng yêu thích cho từng sách
+document.querySelectorAll('.heart-icon').forEach(icon => {
+    icon.addEventListener('click', (e) => {
+        const bookTitle = e.target.getAttribute('data-title');
+        addToFavorites(bookTitle);
+    });
+});
+
+// Chức năng hiển thị giỏ hàng
+const cart = [];
+
+function addToCart(bookTitle) {
+    const book = books.find(b => b.title === bookTitle);
+    if (book) {
+        cart.push(book);
+        alert(`Đã thêm "${book.title}" vào giỏ hàng!`);
+    }
+}
+
+function displayCart() {
+    const cartContainer = document.getElementById('cart-content');
+    cartContainer.innerHTML = ""; // Xóa nội dung cũ
+    cart.forEach(book => {
+        const bookHTML = `
+            <div class="cart-item">
+                <img src="${book.image}" alt="${book.title}" width="50" height="50">
+                <span>${book.title} - ${book.price}</span>
+            </div>`;
+        cartContainer.innerHTML += bookHTML;
+    });
+}
+
+// Lắng nghe sự kiện nhấp vào biểu tượng giỏ hàng
+document.querySelector('.icon-outline-shopping-cart').addEventListener('click', () => {
+    displayCart();
+    document.getElementById('cart-modal').classList.toggle('hidden');
+});
+
+// Thêm chức năng đóng giỏ hàng
+document.getElementById('close-cart').addEventListener('click', () => {
+    document.getElementById('cart-modal').classList.add('hidden');
+});
