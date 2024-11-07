@@ -100,54 +100,105 @@
         </header>
 
         <div class="row mt-4">
-            <!-- Tiêu đề danh mục -->
-            <div class="col-12 mb-4">
-                <h2 id="category-title">Tất cả sản phẩm</h2>
-                <p id="total-products">Hiển thị 0 sản phẩm</p>
-            </div>
+            <!-- Phần bộ lọc và sắp xếp -->
+            <div class="filter-container">
+                <div class="row">
+                    <!-- Sidebar bộ lọc bên trái -->
+                    <div class="col-lg-3">
+                        <div class="filter-sidebar">
+                            <div class="filter-header">
+                                <h5>BỘ LỌC TÌM KIẾM</h5>
+                            </div>
+                            
+                            <!-- Lọc theo giá -->
+                            <div class="filter-section">
+                                <h6 class="filter-title">Khoảng giá</h6>
+                                <div class="price-inputs">
+                                    <input type="number" class="form-control" id="minPrice" placeholder="Giá từ">
+                                    <span>-</span>
+                                    <input type="number" class="form-control" id="maxPrice" placeholder="Giá đến">
+                                </div>
+                                <button class="btn btn-primary btn-apply-price">Áp dụng</button>
+                            </div>
 
-            <!-- Phần filter và sắp xếp -->
-            <div class="col-md-3">
-                <div class="filter-section">
-                    <h4>Bộ lọc sản phẩm</h4>
-                    
-                    <!-- Lọc theo giá -->
-                    <div class="filter-group">
-                        <h5>Giá</h5>
-                        <div class="price-range">
-                            <input type="range" id="priceRange" min="0" max="2000000" step="10000" class="form-range">
-                            <div class="price-inputs">
-                                <input type="number" id="minPrice" placeholder="Từ" class="form-control">
-                                <span>-</span>
-                                <input type="number" id="maxPrice" placeholder="Đến" class="form-control">
+                            <!-- Lọc theo thể loại -->
+                            <div class="filter-section">
+                                <h6 class="filter-title">Thể loại</h6>
+                                <div class="category-filter">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="best-seller" id="bestSeller">
+                                        <label class="form-check-label" for="bestSeller">Best Sellers</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="classics" id="classics">
+                                        <label class="form-check-label" for="classics">Classics</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="children" id="children">
+                                        <label class="form-check-label" for="children">Children</label>
+                                    </div>
+                                    <!-- Thêm các thể loại khác -->
+                                </div>
+                            </div>
+
+                            <!-- Lọc theo đánh giá -->
+                            <div class="filter-section">
+                                <h6 class="filter-title">Đánh giá</h6>
+                                <div class="rating-filter">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating5">
+                                        <label class="form-check-label" for="rating5">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="rating" id="rating4">
+                                        <label class="form-check-label" for="rating4">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            trở lên
+                                        </label>
+                                    </div>
+                                    <!-- Thêm các mức đánh giá khác -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Phần hiển thị sản phẩm -->
-            <div class="col-md-9">
-                <!-- Sắp xếp -->
-                <div class="d-flex justify-content-end mb-3">
-                    <select id="sortSelect" class="form-select" style="width: auto;">
-                        <option value="">Sắp xếp theo</option>
-                        <option value="price-asc">Giá tăng dần</option>
-                        <option value="price-desc">Giá giảm dần</option>
-                        <option value="name-asc">Tên A-Z</option>
-                        <option value="name-desc">Tên Z-A</option>
-                    </select>
-                </div>
+                    <!-- Phần hiển thị sản phẩm bên phải -->
+                    <div class="col-lg-9">
+                        <!-- Thanh sắp xếp và hiển thị số lượng -->
+                        <div class="products-header">
+                            <div class="results-info">
+                                <h4 id="category-title">Tất cả sản phẩm</h4>
+                                <p id="total-products">Hiển thị 0 sản phẩm</p>
+                            </div>
+                            <div class="sort-options">
+                                <select class="form-select" id="sortSelect">
+                                    <option value="">Sắp xếp theo</option>
+                                    <option value="price-asc">Giá thấp đến cao</option>
+                                    <option value="price-desc">Giá cao đến thấp</option>
+                                    <option value="name-asc">Tên A-Z</option>
+                                    <option value="name-desc">Tên Z-A</option>
+                                    <option value="newest">Mới nhất</option>
+                                    <option value="bestseller">Bán chạy nhất</option>
+                                </select>
+                            </div>
+                        </div>
 
-                <!-- Container chứa sản phẩm -->
-                <div id="products-container" class="row">
-                    <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                        <!-- Grid hiển thị sản phẩm -->
+                        <div class="row" id="products-container">
+                            <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Phân trang -->
-                <nav aria-label="Page navigation" class="mt-4">
-                    <ul class="pagination justify-content-center" id="pagination"></ul>
-                </nav>
             </div>
         </div>
 

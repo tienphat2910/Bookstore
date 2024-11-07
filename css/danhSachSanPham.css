@@ -112,4 +112,173 @@
     .book-info {
         height: 100px; /* Giảm chiều cao phần thông tin trên mobile */
     }
+}
+
+/* Thêm styles cho bộ lọc */
+.filter-container {
+    padding: 20px 0;
+}
+
+.filter-sidebar {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.filter-header h5 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.filter-section {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Styles cho lọc giá */
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.price-inputs input {
+    width: 120px;
+}
+
+.btn-apply-price {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Styles cho checkbox và radio */
+.form-check {
+    margin-bottom: 8px;
+}
+
+.form-check-label {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Styles cho đánh giá sao */
+.rating-filter .fas.fa-star {
+    color: #ffc107;
+}
+
+.rating-filter .far.fa-star {
+    color: #ddd;
+}
+
+/* Styles cho phần header sản phẩm */
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.results-info h4 {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.results-info p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.sort-options {
+    min-width: 200px;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+    .filter-sidebar {
+        margin-bottom: 20px;
+    }
+
+    .products-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sort-options {
+        width: 100%;
+    }
+}
+
+/* Active states */
+.form-check-input:checked + .form-check-label {
+    color: #007bff;
+}
+
+/* Hover effects */
+.form-check:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.filter-section:last-child {
+    border-bottom: none;
+}
+
+/* Thêm animation cho loading state */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Badge cho filters đã chọn */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.filter-badge {
+    background: #e9ecef;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-badge .remove {
+    color: #999;
+    cursor: pointer;
+}
+
+.filter-badge .remove:hover {
+    color: #dc3545;
 } 

@@ -24,28 +24,43 @@ const categoryMapping = {
     // ... other mappings ...
 };
 
-// Cập nhật hàm filterProducts
+// Hàm lấy giá trị số từ chuỗi giá (ví dụ: "87.75 $" -> 87.75)
+function extractPrice(priceString) {
+    return parseFloat(priceString.replace(/[^\d.]/g, ''));
+}
+
+// Hàm lọc sản phẩm với nhiều điều kiện
 function filterProducts() {
-    const category = getUrlParameter('category');
+    let filteredBooks = [...window.books]; // Tạo bản sao của mảng books
     
-    // Nếu không có category, trả về tất cả sách
-    if (!category) {
-        return window.books || [];
+    // 1. Lọc theo category từ URL
+    const urlCategory = getUrlParameter('category');
+    if (urlCategory && urlCategory !== 'all') {
+        const categoriesToFilter = categoryMapping[urlCategory] || [urlCategory];
+        filteredBooks = filteredBooks.filter(book => 
+            book.category.some(cat => categoriesToFilter.includes(cat))
+        );
     }
 
-    // Lấy danh sách categories cần lọc từ mapping
-    const categoriesToFilter = categoryMapping[category] || [category];
+    // 2. Lọc theo khoảng giá
+    const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+    
+    filteredBooks = filteredBooks.filter(book => {
+        const price = extractPrice(book.price);
+        return price >= minPrice && price <= maxPrice;
+    });
 
-    console.log('Filtering by categories:', categoriesToFilter); // Debug log
+    // 3. Lọc theo thể loại được chọn từ checkbox
+    const selectedCategories = Array.from(document.querySelectorAll('.category-filter input:checked'))
+        .map(input => input.value);
+    
+    if (selectedCategories.length > 0) {
+        filteredBooks = filteredBooks.filter(book =>
+            book.category.some(cat => selectedCategories.includes(cat))
+        );
+    }
 
-    // Lọc sách theo categories
-    const filteredBooks = window.books.filter(book => 
-        book.category.some(bookCategory => 
-            categoriesToFilter.includes(bookCategory)
-        )
-    );
-
-    console.log('Filtered books:', filteredBooks); // Debug log
     return filteredBooks;
 }
 
@@ -56,16 +71,19 @@ function getUrlParameter(name) {
 }
 
 // Hàm hiển thị sản phẩm
-function displayProducts() {
+function displayProducts(products = null) {
+    const productsToDisplay = products || filterProducts();
     const productsContainer = document.getElementById('products-container');
-    const filteredProducts = filterProducts();
     
+    // Cập nhật số lượng sản phẩm
     document.getElementById('total-products').textContent = 
-        `Hiển thị ${filteredProducts.length} sản phẩm`;
+        `Hiển thị ${productsToDisplay.length} sản phẩm`;
 
+    // Xóa nội dung cũ
     productsContainer.innerHTML = '';
 
-    filteredProducts.forEach(book => {
+    // Hiển thị sản phẩm
+    productsToDisplay.forEach(book => {
         const productHTML = `
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="book-card">
@@ -93,7 +111,8 @@ function displayProducts() {
         productsContainer.innerHTML += productHTML;
     });
 
-    addBookEventListeners();
+    // Cập nhật active filters
+    updateActiveFilters();
 }
 
 // Thêm sự kiện cho các nút trong card sách
@@ -129,15 +148,14 @@ function addBookEventListeners() {
 
 // Hàm sắp xếp sản phẩm
 function sortProducts(sortType) {
-    const productsContainer = document.getElementById('products-container');
     let products = filterProducts();
 
     switch(sortType) {
         case 'price-asc':
-            products.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+            products.sort((a, b) => extractPrice(a.price) - extractPrice(b.price));
             break;
         case 'price-desc':
-            products.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+            products.sort((a, b) => extractPrice(b.price) - extractPrice(a.price));
             break;
         case 'name-asc':
             products.sort((a, b) => a.title.localeCompare(b.title));
@@ -147,37 +165,30 @@ function sortProducts(sortType) {
             break;
     }
 
-    // Xóa và hiển thị lại sản phẩm
-    productsContainer.innerHTML = '';
-    products.forEach(book => {
-        const productHTML = `
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="${book.image}" class="card-img-top" alt="${book.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${book.title}</h5>
-                        <p class="card-text">${book.author}</p>
-                        <p class="card-text"><strong>${book.price}</strong></p>
-                        <button class="btn btn-primary add-to-cart" 
-                            data-product-id="${book.title}">
-                            Thêm vào giỏ hàng
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-        productsContainer.innerHTML += productHTML;
-    });
-
-    addCartButtonEvents();
+    displayProducts(products);
 }
 
-// Khởi tạo trang
+// Khởi tạo trang và thêm các event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Hiển thị sản phẩm
+    // Hiển thị sản phẩm ban đầu
     displayProducts();
 
-    // Thêm sự kiện cho dropdown sắp xếp
+    // Thêm event listener cho nút áp dụng giá
+    const applyPriceBtn = document.querySelector('.btn-apply-price');
+    if (applyPriceBtn) {
+        applyPriceBtn.addEventListener('click', () => {
+            displayProducts();
+        });
+    }
+
+    // Thêm event listener cho các checkbox category
+    document.querySelectorAll('.category-filter input').forEach(input => {
+        input.addEventListener('change', () => {
+            displayProducts();
+        });
+    });
+
+    // Thêm event listener cho dropdown sắp xếp
     const sortSelect = document.getElementById('sortSelect');
     if (sortSelect) {
         sortSelect.addEventListener('change', function() {
@@ -185,19 +196,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Cập nhật tiêu đề category
-    const category = getUrlParameter('category');
-    const categoryTitle = document.getElementById('category-title');
-    if (categoryTitle && category) {
-        const titleMapping = {
-            'van-hoc': 'Văn Học',
-            'kinh-te': 'Kinh Tế',
-            'tam-ly': 'Tâm Lý - Kỹ Năng Sống',
-            'thieu-nhi': 'Sách Thiếu Nhi',
-            'foreign-children': 'Children Books',
-            'foreign-classic': 'Classic Books',
-            'foreign-bestseller': 'Best Sellers'
-        };
-        categoryTitle.textContent = titleMapping[category] || 'Tất cả sản phẩm';
+    // Thêm event listener cho việc xóa filter
+    const activeFilters = document.querySelector('.active-filters');
+    if (activeFilters) {
+        activeFilters.addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove')) {
+                const filterType = e.target.dataset.filter;
+                const filterValue = e.target.dataset.value;
+
+                if (filterType === 'price') {
+                    document.getElementById('minPrice').value = '';
+                    document.getElementById('maxPrice').value = '';
+                } else if (filterType === 'category') {
+                    const checkbox = document.querySelector(`.category-filter input[value="${filterValue}"]`);
+                    if (checkbox) checkbox.checked = false;
+                }
+
+                displayProducts();
+            }
+        });
     }
 });
+
+// Hàm cập nhật hiển thị filters đang active
+function updateActiveFilters() {
+    const activeFiltersContainer = document.querySelector('.active-filters');
+    if (!activeFiltersContainer) return;
+    
+    activeFiltersContainer.innerHTML = '';
+
+    // Hiển thị filter giá
+    const minPrice = document.getElementById('minPrice').value;
+    const maxPrice = document.getElementById('maxPrice').value;
+    if (minPrice || maxPrice) {
+        const priceFilter = document.createElement('span');
+        priceFilter.className = 'filter-badge';
+        priceFilter.innerHTML = `
+            Giá: ${minPrice || '0'}$ - ${maxPrice || '∞'}$
+            <i class="fas fa-times remove" data-filter="price"></i>
+        `;
+        activeFiltersContainer.appendChild(priceFilter);
+    }
+
+    // Hiển thị filter category
+    document.querySelectorAll('.category-filter input:checked').forEach(input => {
+        const badge = document.createElement('span');
+        badge.className = 'filter-badge';
+        badge.innerHTML = `
+            ${input.nextElementSibling.textContent}
+            <i class="fas fa-times remove" data-filter="category" data-value="${input.value}"></i>
+        `;
+        activeFiltersContainer.appendChild(badge);
+    });
+}
