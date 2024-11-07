@@ -414,3 +414,20 @@ footer .col img {
     height: 50px;
     object-fit: contain;
 }
+
+.product-detail-price {
+    font-size: 24px;
+    color: #ff3366; /* Màu hồng đậm */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.price span {
+    color: #ff3366; /* Màu hồng đậm cho giá ở trang chủ */
+    font-weight: bold;
+}
+
+.search-results-container .text-primary {
+    color: #ff3366 !important; /* Màu hồng đậm cho giá trong kết quả tìm kiếm */
+    font-weight: bold;
+}
