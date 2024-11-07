@@ -249,3 +249,131 @@ function updateActiveFilters() {
         activeFiltersContainer.appendChild(badge);
     });
 }
+
+// Hàm xử lý thêm vào giỏ hàng
+function addToCart(productId) {
+    // Tìm sản phẩm trong danh sách
+    const product = window.books.find(book => book.title === productId);
+    if (!product) return;
+
+    // Lấy giỏ hàng từ localStorage hoặc tạo mới
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+    const existingItem = cart.find(item => item.title === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...product,
+            quantity: 1
+        });
+    }
+
+    // Lưu giỏ hàng vào localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Hiển thị thông báo
+    showNotification('Đã thêm sản phẩm vào giỏ hàng!');
+    
+    // Cập nhật số lượng trong icon giỏ hàng (nếu có)
+    updateCartCount();
+}
+
+// Hàm hiển thị thông báo
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Xóa thông báo sau 3 giây
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// Hàm cập nhật số lượng trong icon giỏ hàng
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+        cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+    }
+}
+
+// Cập nhật hàm displayProducts để thêm sự kiện click
+function displayProducts(products = null) {
+    const productsToDisplay = products || filterProducts();
+    const productsContainer = document.getElementById('products-container');
+    
+    document.getElementById('total-products').textContent = 
+        `Hiển thị ${productsToDisplay.length} sản phẩm`;
+
+    productsContainer.innerHTML = '';
+
+    productsToDisplay.forEach(book => {
+        const productHTML = `
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="${book.image}" alt="${book.title}" class="product-image">
+                        <div class="overlay">
+                            <button class="btn btn-primary add-to-cart" data-product-id="${book.title}">
+                                <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                            </button>
+                            <button class="btn btn-outline-primary view-detail" data-product-id="${book.title}">
+                                <i class="fas fa-eye"></i> Xem chi tiết
+                            </button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title" onclick="viewProductDetail('${book.title}')">${book.title}</div>
+                        <p class="book-author">${book.author}</p>
+                        <p class="book-price">${book.price}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        productsContainer.innerHTML += productHTML;
+    });
+
+    // Thêm event listeners cho các nút
+    addProductEventListeners();
+}
+
+// Hàm thêm event listeners cho các nút trong sản phẩm
+function addProductEventListeners() {
+    // Event listener cho nút thêm vào giỏ
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const productId = this.getAttribute('data-product-id');
+            addToCart(productId);
+        });
+    });
+
+    // Event listener cho nút xem chi tiết và ảnh sản phẩm
+    document.querySelectorAll('.view-detail, .product-image').forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const productId = this.closest('.book-card').querySelector('.view-detail').getAttribute('data-product-id');
+            viewProductDetail(productId);
+        });
+    });
+}
+
+// Hàm chuyển đến trang chi tiết sản phẩm
+function viewProductDetail(productId) {
+    window.location.href = `ChiTietSanPham.html?id=${encodeURIComponent(productId)}`;
+}
