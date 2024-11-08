@@ -594,7 +594,7 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/home_script.js"></script>
-
+    <script src="../js/ChiTietTaiKhoan.js"></script>
     <script>
       $(document).ready(function () {
         const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -619,8 +619,7 @@
         }
 
         // Xử lý sự kiện khi nhấp vào biểu tượng người dùng để toggle dropdown
-        $("#userDropdown").on("click", function (e) {
-          e.stopPropagation(); // Ngăn sự kiện lan ra ngoài
+        $("#userDropdown").on("click", function () {
           dropdownMenu.toggle(); // Sử dụng toggle để hiển thị/ẩn menu
         });
 
