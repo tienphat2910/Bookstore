@@ -1,0 +1,75 @@
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.order-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-header {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+}
+
+.order-body {
+    padding: 15px;
+}
+
+.order-footer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.status-pending {
+    background-color: #ffeeba;
+    color: #856404;
+}
+
+.status-confirmed {
+    background-color: #b8daff;
+    color: #004085;
+}
+
+.status-shipping {
+    background-color: #c3e6cb;
+    color: #155724;
+}
+
+.status-completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.order-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+} 

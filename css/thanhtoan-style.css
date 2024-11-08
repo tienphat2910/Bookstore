@@ -1,0 +1,139 @@
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cart-item img {
+    max-width: 100px;
+    height: auto;
+}
+
+.payment-summary {
+    background-color: #f8f9fa;
+}
+
+.payment-methods {
+    background-color: #f8f9fa;
+}
+
+.payment-details {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.qr-code {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+}
+
+#confirmPayment {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+}
+
+#confirmPayment:hover {
+    background-color: #0056b3;
+}
+
+/* Header Styles */
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.order-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    color: #6c757d;
+}
+
+.step.active {
+    color: #007bff;
+}
+
+.step.completed {
+    color: #28a745;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.step.active .step-number,
+.step.completed .step-number {
+    background-color: currentColor;
+    color: white;
+}
+
+.step-line {
+    width: 50px;
+    height: 2px;
+    background-color: #dee2e6;
+}
+
+.step.completed + .step-line {
+    background-color: #28a745;
+}
+
+.user-info {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+footer h5 {
+    color: #343a40;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+.app-download-icons img {
+    height: 40px;
+    width: auto;
+} 
