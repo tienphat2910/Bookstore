@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        padding: 0;
+        background-color: #6251dd;
+      }
+      .login-container {
+        background-color: #fff;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        margin-top: 100px;
+      }
+      .login-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+      .login-logo {
+        aspect-ratio: 1.54;
+        object-fit: contain;
+        width: 100px;
+        max-width: 100%;
+      }
+      .welcome-text {
+        color: rgba(9, 9, 55, 0.6);
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .login-header {
+        color: #090937;
+        font-weight: 700;
+        font-size: 28px;
+      }
+      .input-label {
+        color: #090937;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      .input-field {
+        border-radius: 4px;
+        background-color: #f4f4ff;
+        min-height: 50px;
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        outline: none; /* Removes the outline */
+      }
+      .password-input-container {
+        border-radius: 4px;
+        background-color: #f4f4ff;
+        display: flex;
+        min-height: 50px;
+        align-items: center;
+        padding: 0 16px;
+      }
+      .input-field:focus,
+      .password-input:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .password-toggle {
+        width: 24px;
+        cursor: pointer;
+        margin-left: 8px;
+      }
+      .login-options .form-check-label {
+        font-weight: 700;
+        color: #6251dd;
+      }
+      .login-button {
+        background-color: #ef6b4a;
+        color: #fff;
+        margin-top: 20px;
+        min-height: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+      }
+      .register-button {
+        background-color: #fff;
+        color: #6251dd;
+        margin-top: 10px;
+        border: 1px solid #6251dd;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="login-container container-fluid vh-50 d-flex align-items-center"
+    >
+      <div class="row w-100">
+        <div class="col-lg-7 d-flex flex-column align-items-center">
+          <img
+            src="../img/banner_login.png"
+            alt="Register hero image"
+            class="login-hero-image"
+          />
+        </div>
+        <div class="col-lg-5 d-flex flex-column align-items-start">
+          <div class="text-center w-100">
+            <img
+              src="../img/logo.jpg"
+              alt="Company logo"
+              class="login-logo mx-auto"
+            />
+            <h2 class="welcome-text">Welcome!</h2>
+            <h1 class="login-header">Create a new account</h1>
+          </div>
+          <form class="w-100" id="registrationForm">
+            <label for="name" class="input-label">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control input-field mb-3"
+              placeholder="John Doe"
+              required
+            />
+            <div id="nameError" class="error-message"></div>
+            <label for="phone" class="input-label">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              class="form-control input-field mb-3"
+              placeholder="123-456-7890"
+              required
+            />
+            <div id="phoneError" class="error-message"></div>
+            <label for="email" class="input-label">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control input-field mb-3"
+              placeholder="john@mail.com"
+              required
+            />
+            <div id="emailError" class="error-message"></div>
+
+            <label for="password" class="input-label">Password</label>
+            <div class="password-input-container mb-3">
+              <input
+                type="password"
+                id="password"
+                class="form-control border-0 bg-transparent password-input"
+                required
+              />
+              <img
+                src="../img/closed_eye.png"
+                alt="Toggle password visibility"
+                class="password-toggle"
+                id="passwordToggle"
+              />
+            </div>
+            <div id="passwordError" class="error-message"></div>
+
+            <div class="form-check login-options">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="terms"
+                required
+              />
+              <label class="form-check-label" for="terms"
+                >Agree to Terms & Conditions</label
+              >
+            </div>
+
+            <button type="submit" class="btn login-button w-100 mt-3">
+              Register
+            </button>
+            <button type="button" class="btn register-button w-100 mt-2">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Success Notification -->
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">
+              Registration Successful
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Your account has been successfully created!
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#registrationForm").on("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Clear previous error messages
+          $(".error-message").text("");
+
+          // Validation flags
+          let isValid = true;
+
+          // Updated Name validation: at least two words, each capitalized
+          const nameRegex = /^([A-ZĐ][a-zđ]*)(\s[A-ZĐ][a-zđ]*){1,}$/; // Updated regex for names with multiple capitalized words
+          const name = $("#name").val().trim();
+          if (!nameRegex.test(name)) {
+            $("#nameError").text(
+              "Tên phải chứa ít nhất hai từ, mỗi từ bắt đầu bằng chữ in hoa."
+            );
+            isValid = false;
+          }
+          const phoneRegex = /^[0-9]{10}$/;
+          const phone = $("#phone").val().trim();
+          if (!phoneRegex.test(phone)) {
+            $("#phoneError").text(
+              "Vui lòng nhập số điện thoại hợp lệ gồm 10 chữ số."
+            );
+            isValid = false;
+          }
+          // Email validation: simple regex
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          const email = $("#email").val().trim();
+          if (!emailRegex.test(email)) {
+            $("#emailError").text("Vui lòng nhập địa chỉ email hợp lệ.");
+            isValid = false;
+          }
+
+          // Password validation: at least 6 characters long
+          const password = $("#password").val().trim();
+          if (password.length < 6) {
+            $("#passwordError").text("Mật khẩu phải dài ít nhất 6 ký tự.");
+            isValid = false;
+          }
+
+          // Check if the email is already registered
+          const existingData = localStorage.getItem("userData");
+          if (existingData) {
+            const userData = JSON.parse(existingData);
+            if (userData.email === email) {
+              $("#emailError").text("Email đã được đăng ký.");
+              isValid = false;
+            }
+          }
+
+          // If all fields are valid, store user data in localStorage
+          if (isValid) {
+            const registrationData = {
+              name: name,
+              email: email,
+              password: password
+            };
+
+            // Store registration data in localStorage
+            localStorage.setItem("userData", JSON.stringify(registrationData));
+
+            // Show success modal
+            const successModal = new bootstrap.Modal($("#successModal")[0]);
+            successModal.show();
+
+            // Redirect to login page after a delay (optional)
+            setTimeout(function () {
+              window.location.href = "login.html"; // Change this path if necessary
+            }, 2000); // Redirect after 2 seconds
+          }
+        });
+
+        // Toggle password visibility
+        $("#passwordToggle").on("click", function () {
+          const passwordInput = $("#password");
+          const isPasswordVisible = passwordInput.attr("type") === "text";
+
+          // Toggle input type
+          passwordInput.attr("type", isPasswordVisible ? "password" : "text");
+
+          // Toggle image
+          $(this).attr(
+            "src",
+            isPasswordVisible
+              ? "../img/closed_eye.png"
+              : "../img/opened_eye.png"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
