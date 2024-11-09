@@ -15,8 +15,21 @@
 
         <div class="wishlist-container my-5">
             <h2 class="mb-4">Danh sách yêu thích</h2>
-            <div id="wishlistItems" class="row">
-                <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+
+            <!-- Sách Trong nước -->
+            <div class="category-section mb-4">
+                <h4 class="mb-3">Sách Trong nước</h4>
+                <div class="row" id="domesticBooks">
+                    <!-- Sách trong nước sẽ được thêm vào đây -->
+                </div>
+            </div>
+
+            <!-- FOREIGN BOOKS -->
+            <div class="category-section mb-4">
+                <h4 class="mb-3">FOREIGN BOOKS</h4>
+                <div class="row" id="foreignBooks">
+                    <!-- Sách nước ngoài sẽ được thêm vào đây -->
+                </div>
             </div>
         </div>
 
@@ -27,26 +40,40 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script>
-        // Lấy danh sách yêu thích từ localStorage
         let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-        console.log('Wishlist:', wishlist); // Để debug
 
-        // Hiển thị danh sách yêu thích
         function displayWishlist() {
-            const wishlistContainer = document.getElementById('wishlistItems');
-            console.log('Container:', wishlistContainer); // Để debug
+            const domesticContainer = document.getElementById('domesticBooks');
+            const foreignContainer = document.getElementById('foreignBooks');
 
-            if (!wishlistContainer) {
-                console.error('Không tìm thấy container');
-                return;
+            // Phân loại sách
+            const domesticBooks = wishlist.filter(item => !item.isforeign);
+            const foreignBooks = wishlist.filter(item => item.isforeign);
+
+            // Hiển thị sách trong nước
+            if (domesticBooks.length === 0) {
+                domesticContainer.innerHTML = '<p class="text-center col-12">Không có sách trong nước trong danh sách yêu thích</p>';
+            } else {
+                domesticContainer.innerHTML = createBookCards(domesticBooks);
             }
 
-            if (!wishlist || wishlist.length === 0) {
-                wishlistContainer.innerHTML = '<p class="text-center col-12">Danh sách yêu thích trống</p>';
-                return;
+            // Hiển thị sách nước ngoài
+            if (foreignBooks.length === 0) {
+                foreignContainer.innerHTML = '<p class="text-center col-12">Không có sách nước ngoài trong danh sách yêu thích</p>';
+            } else {
+                foreignContainer.innerHTML = createBookCards(foreignBooks);
             }
 
-            wishlistContainer.innerHTML = wishlist.map(item => `
+            // Ẩn section nếu không có sách
+            document.querySelectorAll('.category-section').forEach(section => {
+                const hasBooks = section.querySelector('.row').children.length > 0 && 
+                               !section.querySelector('.row').innerHTML.includes('Không có sách');
+                section.style.display = hasBooks ? 'block' : 'none';
+            });
+        }
+
+        function createBookCards(books) {
+            return books.map(item => `
                 <div class="col-md-3 mb-4">
                     <div class="card h-100">
                         <a href="ChiTietSanPham.html?id=${encodeURIComponent(item.title)}">
@@ -71,6 +98,39 @@
                 </div>
             `).join('');
         }
+
+        // Thêm CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            .category-section {
+                border-bottom: 1px solid #eee;
+                padding-bottom: 2rem;
+            }
+            
+            .category-section:last-child {
+                border-bottom: none;
+            }
+
+            .category-section h4 {
+                color: #333;
+                font-weight: 600;
+                position: relative;
+                padding-left: 15px;
+            }
+
+            .category-section h4::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 20px;
+                background-color: #0d6efd;
+                border-radius: 2px;
+            }
+        `;
+        document.head.appendChild(style);
 
         // Hàm xóa sản phẩm khỏi danh sách yêu thích
         function removeFromWishlist(title) {
@@ -115,7 +175,6 @@
 
         // Khởi tạo khi trang được load
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded'); // Để debug
             displayWishlist();
             updateWishlistIcon();
         });
