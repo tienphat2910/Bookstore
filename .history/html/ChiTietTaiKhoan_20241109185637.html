@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi tiết tài khoản</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/home-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <!-- Hamburger Menu Icon -->
+          <div class="dropdown">
+            <button
+              class="btn btn-light me-3"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Dropdown Content -->
+            <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+              <h5 class="mb-3">Danh sách sản phẩm</h5>
+              <div class="d-flex">
+                <div class="me-4">
+                  <h6>
+                    <a
+                      href="DanhSachSanPham.html?category=trong-nuoc"
+                      class="dropdown-item"
+                      >Sách Trong nước</a
+                    >
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=van-hoc"
+                        class="dropdown-item"
+                        >Văn học</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=kinh-te"
+                        class="dropdown-item"
+                        >Kinh tế</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=tam-ly"
+                        class="dropdown-item"
+                        >Tâm Lý - Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=thieu-nhi"
+                        class="dropdown-item"
+                        >Sách thiếu nhi</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=giao-khoa"
+                        class="dropdown-item"
+                        >Sách Giáo Khoa - Tham Khảo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ngoai-ngu"
+                        class="dropdown-item"
+                        >Sách ngoại ngữ</a
+                      >
+                    </li>
+                  </ul>
+
+                  <h6 class="mt-3">
+                    <a
+                      href="DanhSachSanPham.html?category=foreign"
+                      class="dropdown-item"
+                      >FOREIGN BOOKS</a
+                    >
+                  </h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-children"
+                        class="dropdown-item"
+                        >Children</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-classic"
+                        class="dropdown-item"
+                        >Classic</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-bestseller"
+                        class="dropdown-item"
+                        >Best seller</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-fiction"
+                        class="dropdown-item"
+                        >Fiction</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-dictionaries"
+                        class="dropdown-item"
+                        >Dictionaries</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-comic"
+                        class="dropdown-item"
+                        >Comic</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-computing"
+                        class="dropdown-item"
+                        >Computing</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-technology"
+                        class="dropdown-item"
+                        >Technology & Engineering</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=foreign-history"
+                        class="dropdown-item"
+                        >History</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h6>Văn học</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=tieu-thuyet"
+                        class="dropdown-item"
+                        >Tiểu Thuyết</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=truyen-ngan"
+                        class="dropdown-item"
+                        >Truyện Ngắn</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=light-novel"
+                        class="dropdown-item"
+                        >Light Novel</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ngon-tinh"
+                        class="dropdown-item"
+                        >Ngôn Tình</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=truyen-trinh-tham"
+                        class="dropdown-item"
+                        >Truyện Trinh Thám</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=tho-ca"
+                        class="dropdown-item"
+                        >Thơ Ca</a
+                      >
+                    </li>
+                  </ul>
+
+                  <h6 class="mt-3">Kinh tế</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=tai-chinh-ngan-hang"
+                        class="dropdown-item"
+                        >Tài chính ngân hàng</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=marketing"
+                        class="dropdown-item"
+                        >Marketing</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=bai-hoc-kinh-doanh"
+                        class="dropdown-item"
+                        >Nhân vật - Bài học kinh doanh</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=quan-tri-lanh-dao"
+                        class="dropdown-item"
+                        >Quản trị - lãnh đạo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=khoi-nghiep"
+                        class="dropdown-item"
+                        >Khởi nghiệp - làm giàu</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=chung-khoan"
+                        class="dropdown-item"
+                        >Chứng khoán - BĐS - Đầu tư</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ke-toan"
+                        class="dropdown-item"
+                        >Kế toán - Kiểm Toán - Thuế</a
+                      >
+                    </li>
+                  </ul>
+
+                  <h6 class="mt-3">Tâm Lý - Kỹ năng sống</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=tam-ly-hoc"
+                        class="dropdown-item"
+                        >Tâm lý học</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ren-luyen-nhan-cach"
+                        class="dropdown-item"
+                        >Rèn luyện nhân cách</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ky-nang-song"
+                        class="dropdown-item"
+                        >Kỹ năng sống</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=ky-nang-lam-viec"
+                        class="dropdown-item"
+                        >Kỹ năng làm việc</a
+                      >
+                    </li>
+                  </ul>
+
+                  <h6 class="mt-3">Sách thiếu nhi</h6>
+                  <ul class="list-unstyled ms-3">
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=truyen-thieu-nhi"
+                        class="dropdown-item"
+                        >Truyện thiếu nhi</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=kien-thuc-thieu-nhi"
+                        class="dropdown-item"
+                        >Kiến thức - Kỹ năng</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=manga"
+                        class="dropdown-item"
+                        >Manga - Comic</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="DanhSachSanPham.html?category=sach-anh"
+                        class="dropdown-item"
+                        >Sách tranh</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Logo -->
+          <div class="logo">
+            <a href="home.html"><img src="../img/logo.jpg" alt="Logo" class="logo-img" /></a>
+          </div>
+        </div>
+        <!-- Search and Icons Part -->
+        <div class="search-part">
+          <input
+            class="form-control me-2 search-input"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <!-- Add this div for search results -->
+          <div
+            id="search-results"
+            class="row mt-3 search-results-container"
+          ></div>
+        </div>
+        <div class="icons d-flex align-items-center">
+          <div class="profile dropdown me-3">
+            <img
+              src="../img/user.png"
+              alt="User"
+              class="icon-outline-user dropdown-toggle"
+              id="userDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            />
+            <ul
+              class="custom-dropdown-menu user-dropdown-menu"
+              aria-labelledby="userDropdown"
+              id="userDropdownMenu"
+              style="display: none"
+            >
+              <!-- Nội dung sẽ được JavaScript chèn vào -->
+            </ul>
+          </div>
+
+          <div class="heart me-3">
+            <a href="YeuThich.html"
+              ><img src="../img/heart.png" alt="Wishlist" class="heart-icon"
+            /></a>
+          </div>
+          <div class="shop">
+            <a href="GioHang.html">
+              <img
+                src="../img/cart.png"
+                alt="Shopping Cart"
+                class="icon-outline-shopping-cart"
+              />
+            </a>
+          </div>
+        </div>
+      </header>
+        <div class="container-fluid">
+        <div class="row">
+            <!-- Bên trái: Aside -->
+            <aside class="col-lg-3 p-3 border-end">
+            <h2 id="userName">Tên người dùng</h2>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                <a class="nav-link active text-danger" href="#" id="accountInfoLink">Thông tin tài khoản</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="YeuThich.html">Sản phẩm yêu thích</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="home.html">Sách mới</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="./LichSuDonHang.html" id="orderHistoryLink">Đơn hàng của tôi</a>
+                </li>
+            </ul>
+            </aside>
+
+            <!-- Nội dung bên phải: Thông tin tài khoản -->
+            <div class="col-lg-9 p-3">
+            <!-- Mục Thông tin tài khoản -->
+            <div id="accountInfo">
+                <h3>Thông tin tài khoản</h3>
+                <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" id="profileLink" href="#">Hồ sơ cá nhân</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="addressLink" data-bs-toggle="tab" href="#addressBook" role="tab" aria-controls="addressBook" aria-selected="false">Sổ địa chỉ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="passwordLink" href="#">Đổi mật khẩu</a>
+                </li>
+                </ul>
+
+                <!-- Form Hồ sơ cá nhân -->
+                <div id="profileForm" class="mt-3">
+                <h4>Hồ sơ cá nhân</h4>
+                <form id="profileFormData">
+                    <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+                </form>
+                </div>
+
+                <!-- Form Sổ địa chỉ -->
+                <div id="addressForm" class="mt-3 d-none">
+                <h4>Thêm địa chỉ mới</h4>
+                <form id="addressFormData">
+                    <div class="mb-3">
+                    <label for="addressName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="addressName" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="addressPhone" class="form-label">Số điện thoại</label>
+                    <input type="text" class="form-control" id="addressPhone" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="address" class="form-label">Địa chỉ</label>
+                    <input type="text" class="form-control" id="address" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="postalCode" class="form-label">Mã bưu điện</label>
+                    <input type="text" class="form-control" id="postalCode" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu địa chỉ</button>
+                </form>
+                </div>
+
+                <!-- Form Đổi mật khẩu -->
+                <div id="passwordForm" class="mt-3 d-none">
+                <h4>Đổi mật khẩu</h4>
+                <form id="passwordFormData">
+                    <div class="mb-3">
+                    <label for="currentPassword" class="form-label">Mật khẩu hiện tại</label>
+                    <input type="password" class="form-control" id="currentPassword" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                    <input type="password" class="form-control" id="newPassword" required />
+                    </div>
+                    <div class="mb-3">
+                    <label for="confirmNewPassword" class="form-label">Nhập lại mật khẩu mới</label>
+                    <input type="password" class="form-control" id="confirmNewPassword" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+      <footer class="container py-5">
+        <div class="row">
+          <!-- Left Side -->
+          <div class="col-md-4">
+            <img src="../img/logo.jpg" alt="Logo" class="mb-3" width="150" />
+            <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Hồ Chí Minh</p>
+            <p>
+              Bookstore nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ
+              trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả
+              Hệ Thống Bookstore trên toàn quốc.
+            </p>
+            <div class="d-flex align-items-center">
+              <img
+                src="../img/logo-bo-cong-thuong-da-thong-bao1.webp"
+                alt="Registered Logo"
+                width="100"
+              />
+            </div>
+            <div class="mt-3 d-flex">
+              <!-- Social Media Icons -->
+              <img
+                src="../img/Facebook-on.webp"
+                alt="Facebook"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Insta-on.webp"
+                alt="Instagram"
+                class="me-2"
+                width="30"
+              />
+              <img
+                src="../img/Youtube-on.webp"
+                alt="YouTube"
+                class="me-2"
+                width="30"
+              />
+            </div>
+
+            <div class="mt-3 d-flex app-download-icons">
+              <!-- App Download Icons -->
+              <img src="../img/android1.webp" alt="Android" class="me-2" />
+              <img src="../img/appstore1.webp" alt="App Store" />
+            </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="col-md-8">
+            <div class="row">
+              <!-- Column 1: DỊCH VỤ -->
+              <div class="col-md-3">
+                <h5>DỊCH VỤ</h5>
+                <ul class="list-unstyled">
+                  <li><a href="DieuKhoanSuDung.html">Điều khoản sử dụng</a></li>
+                  <li>
+                    <a href="ChinhSachBaoMatThongTinCaNhan.html"
+                      >Chính sách bảo mật thông tin cá nhân</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoMatThanhToan.html"
+                      >Chính sách bảo mật thanh toán</a
+                    >
+                  </li>
+                  <li><a href="GioiThieu.html">Giới thiệu Bookstore</a></li>
+                </ul>
+              </div>
+              <!-- Column 2: HỖ TRỢ -->
+              <div class="col-md-3">
+                <h5>HỖ TRỢ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="ChinhSachDoiTra.html"
+                      >Chính sách đổi - trả - hoàn tiền</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachBaoHanh.html"
+                      >Chính sách bảo hành - bồi hoàn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ChinhSachVanChuyen.html">Chính sách vận chuyển</a>
+                  </li>
+                  <li>
+                    <a href="ChinhSachKhachSi.html">Chính sách khách sỉ</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Column 3: TÀI KHOẢN CỦA TÔI -->
+              <div class="col-md-3">
+                <h5>TÀI KHOẢN CỦA TÔI</h5>
+                <ul class="list-unstyled">
+                  <li><a href="login.html">Đăng nhập/Tạo mới tài khoản</a></li>
+                  <li><a href="#">Chi tiết tài khoản</a></li>
+                  <li><a href="#">Lịch sử mua hàng</a></li>
+                </ul>
+              </div>
+              <!-- Column 4: LIÊN HỆ -->
+              <div class="col-md-3">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fa fa-map-marker me-2"></i>12 Nguyễn Văn Bảo,
+                    Phường 4, Gò Vấp, Hồ Chí Minh
+                  </li>
+                  <li><i class="fa fa-envelope me-2"></i>cskh@gmail.com</li>
+                  <li><i class="fa fa-phone me-2"></i>0376549230</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Payment and Delivery Icons -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <img
+                  src="../img/icon_snappy1.webp"
+                  alt="Snappy"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/logo_lex.webp"
+                  alt="LEX"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/Logo_ninjavan.webp"
+                  alt="Ninja Van"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpost1.webp"
+                  alt="VNPost"
+                  class="me-2"
+                  width="50"
+                />
+                <img src="../img/ahamove_logo3.webp" alt="Ahamove" width="50" />
+              </div>
+              <div class="col text-center">
+                <img
+                  src="../img/momopay.webp"
+                  alt="Momo"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/vnpay_logo.webp"
+                  alt="VNPay"
+                  class="me-2"
+                  width="50"
+                />
+                <img
+                  src="../img/shopeepay_logo.webp"
+                  alt="ShopeePay"
+                  width="50"
+                />
+              </div>
+            </div>
+
+            <!-- Business Registration Information -->
+            <p class="mt-4 text-center">
+              Giấy chứng nhận Đăng ký Kinh doanh số 0304132047 do Sở Kế hoạch và
+              Đầu tư Thành phố Hồ Chí Minh cấp ngày 20/12/2005, đăng ký thay đổi
+              lần thứ 10, ngày 20/05/2022.
+            </p>
+            <p class="text-center">
+              &copy; 2024 Your Company. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/home_script.js"></script>
+    <script src="../js/ChiTietTaiKhoan.js"></script>
+    <script>
+      $(document).ready(function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const dropdownMenu = $("#userDropdownMenu");
+
+        // Kiểm tra xem phần tử dropdownMenu có tồn tại không
+        if (dropdownMenu.length === 0) {
+          console.error("Dropdown menu không tìm thấy.");
+          return;
+        }
+
+        // Chèn nội dung vào menu dựa trên trạng thái đăng nhập
+        if (isLoggedIn === "true") {
+          dropdownMenu.html(`
+      <li><a class="dropdown-item" href="ChiTietTaiKhoan.html">Chi tiết tài khoản</a></li>
+      <li><a class="dropdown-item" href="#" id="logout">Đăng xuất</a></li>
+    `);
+        } else {
+          dropdownMenu.html(`
+      <li><a class="dropdown-item" href="login.html">Đăng nhập</a></li>
+    `);
+        }
+
+        // Xử lý sự kiện khi nhấp vào biểu tượng người dùng để toggle dropdown
+        $("#userDropdown").on("click", function () {
+          dropdownMenu.toggle(); // Sử dụng toggle để hiển thị/ẩn menu
+        });
+
+        // Đăng xuất
+        $(document).on("click", "#logout", function () {
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("username");
+          window.location.reload(); // Tải lại trang để cập nhật giao diện
+        });
+      });
+    </script>
+    </div>
+  </body>
+</html>
