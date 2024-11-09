@@ -6,7 +6,6 @@
     <title>Danh sách yêu thích</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/home-style.css">
 </head>
@@ -24,15 +23,25 @@
         <!-- Copy footer từ home.html -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="../js/wishlist.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
     <script>
+        // Lấy danh sách yêu thích từ localStorage
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        console.log('Wishlist:', wishlist); // Để debug
+
         // Hiển thị danh sách yêu thích
         function displayWishlist() {
             const wishlistContainer = document.getElementById('wishlistItems');
-            if (!wishlistContainer) return;
+            console.log('Container:', wishlistContainer); // Để debug
 
-            if (wishlist.length === 0) {
+            if (!wishlistContainer) {
+                console.error('Không tìm thấy container');
+                return;
+            }
+
+            if (!wishlist || wishlist.length === 0) {
                 wishlistContainer.innerHTML = '<p class="text-center col-12">Danh sách yêu thích trống</p>';
                 return;
             }
@@ -40,18 +49,20 @@
             wishlistContainer.innerHTML = wishlist.map(item => `
                 <div class="col-md-3 mb-4">
                     <div class="card h-100">
-                        <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                        <a href="ChiTietSanPham.html?id=${encodeURIComponent(item.title)}">
+                            <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">${item.title}</h5>
                             <p class="card-text">${item.author}</p>
                             <p class="card-text text-primary">${item.price}</p>
                             <div class="d-flex justify-content-between">
                                 <button class="btn btn-primary btn-sm" 
-                                    onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                                    onclick="addToCart('${JSON.stringify(item).replace(/'/g, "\\'")}')">
                                     Thêm vào giỏ
                                 </button>
-                                <button class="btn btn-outline-danger btn-sm" 
-                                    onclick="toggleWishlist(${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                                <button class="btn btn-outline-danger btn-sm active" 
+                                    onclick="removeFromWishlist('${item.title}')">
                                     <i class="fas fa-heart"></i>
                                 </button>
                             </div>
@@ -61,7 +72,50 @@
             `).join('');
         }
 
+        // Hàm xóa sản phẩm khỏi danh sách yêu thích
+        function removeFromWishlist(title) {
+            const index = wishlist.findIndex(item => item.title === title);
+            if (index !== -1) {
+                wishlist.splice(index, 1);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert("Đã xóa khỏi danh sách yêu thích!");
+                displayWishlist();
+                updateWishlistIcon();
+            }
+        }
+
+        // Hàm thêm vào giỏ hàng
+        function addToCart(itemStr) {
+            const item = JSON.parse(itemStr);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(p => p.title === item.title);
+            
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({...item, quantity: 1});
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert("Đã thêm vào giỏ hàng!");
+        }
+
+        // Cập nhật số lượng trên icon wishlist
+        function updateWishlistIcon() {
+            const wishlistCount = wishlist.length;
+            const heartIcon = document.querySelector('.heart-icon');
+            if (heartIcon) {
+                if (wishlistCount > 0) {
+                    heartIcon.classList.add('has-items');
+                } else {
+                    heartIcon.classList.remove('has-items');
+                }
+            }
+        }
+
+        // Khởi tạo khi trang được load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded'); // Để debug
             displayWishlist();
             updateWishlistIcon();
         });

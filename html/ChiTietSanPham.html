@@ -276,6 +276,18 @@
                     // Chuyển hướng đến trang giỏ hàng
                     window.location.href = 'GioHang.html';
                 });
+
+                // Kiểm tra và cập nhật trạng thái nút yêu thích
+                const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+                const wishlistBtn = document.querySelector('.btn-outline-danger');
+                if (wishlist.some(item => item.title === product.title)) {
+                    wishlistBtn.classList.add('active');
+                }
+
+                // Thêm sự kiện click cho nút yêu thích
+                wishlistBtn.addEventListener('click', function() {
+                    toggleWishlist(product);
+                });
             }
         });
 
@@ -295,6 +307,49 @@
 
         function getProductDetails(productId) {
             return books.find(book => book.title === productId);
+        }
+
+        function toggleWishlist(product) {
+            // Kiểm tra đăng nhập
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn !== 'true') {
+                alert("Vui lòng đăng nhập để sử dụng tính năng này!");
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 500);
+                return;
+            }
+
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistBtn = document.querySelector('.btn-outline-danger');
+            const index = wishlist.findIndex(item => item.title === product.title);
+
+            if (index === -1) {
+                // Thêm vào wishlist
+                wishlist.push({
+                    title: product.title,
+                    author: product.author,
+                    price: product.price,
+                    image: product.image
+                });
+                wishlistBtn.classList.add('active');
+                
+                // Hiển thị alert thêm thành công
+                alert("Đã thêm vào danh sách yêu thích!");
+                
+                // Chuyển hướng sau khi người dùng đóng alert
+                window.location.href = 'YeuThich.html';
+            } else {
+                // Xóa khỏi wishlist
+                wishlist.splice(index, 1);
+                wishlistBtn.classList.remove('active');
+                
+                // Hiển thị alert xóa thành công
+                alert("Đã xóa khỏi danh sách yêu thích!");
+            }
+
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistIcon();
         }
     </script>
 </body>

@@ -313,6 +313,84 @@ document.getElementById('close-cart').addEventListener('click', () => {
     document.getElementById('cart-modal').classList.add('hidden');
 });
 
+function createBookCard(book) {
+    return `
+    <div class="col-6 col-md-3 mb-4">
+        <div class="card book-card">
+            <div class="position-relative">
+                <a href="ChiTietSanPham.html?id=${encodeURIComponent(book.title)}">
+                    <img src="${book.image}" class="card-img-top" alt="${book.title}">
+                </a>
+                <button class="btn-wishlist ${isInWishlist(book) ? 'active' : ''}" 
+                        onclick="toggleWishlist(this, ${JSON.stringify(book).replace(/"/g, '&quot;')})">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="ChiTietSanPham.html?id=${encodeURIComponent(book.title)}">${book.title}</a>
+                </h5>
+                <p class="card-author">${book.author}</p>
+                <p class="card-price">${book.price}</p>
+            </div>
+        </div>
+    </div>`;
+}
+
+function isInWishlist(book) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    return wishlist.some(item => item.title === book.title);
+}
+
+function toggleWishlist(button, book) {
+    // Kiểm tra đăng nhập
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn !== 'true') {
+        Toastify({
+            text: "Vui lòng đăng nhập để sử dụng tính năng này!",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#ff9800",
+        }).showToast();
+        
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+        return;
+    }
+
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const index = wishlist.findIndex(item => item.title === book.title);
+
+    if (index === -1) {
+        // Thêm vào wishlist
+        wishlist.push(book);
+        button.classList.add('active');
+        Toastify({
+            text: "Đã thêm vào danh sách yêu thích!",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#4CAF50",
+        }).showToast();
+    } else {
+        // Xóa khỏi wishlist
+        wishlist.splice(index, 1);
+        button.classList.remove('active');
+        Toastify({
+            text: "Đã xóa khỏi danh sách yêu thích!",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#ff9800",
+        }).showToast();
+    }
+
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    updateWishlistIcon(); // Cập nhật số lượng trên icon header
+}
+
 
 
 
